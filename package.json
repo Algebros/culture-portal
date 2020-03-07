@@ -9,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "scully": "scully",
+    "scully:serve": "scully serve"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +23,9 @@
     "@angular/platform-browser": "~9.0.0",
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
+    "@scullyio/init": "0.0.23",
+    "@scullyio/ng-lib": "latest",
+    "@scullyio/scully": "latest",
     "angular-mgl-timeline": "^0.3.2",
     "buttercms": "^1.2.2",
     "rxjs": "~6.5.4",
@@ -38,7 +43,7 @@
     "@storybook/addon-notes": "^5.3.14",
     "@storybook/addons": "^5.3.14",
     "@storybook/angular": "^5.3.14",
-    "@types/jasmine": "~3.5.0",
+    "@types/jasmine": "^3.5.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "babel-loader": "^8.0.6",
