@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { butterService } from './_services/butter-cms.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +6,8 @@ import { butterService } from './_services/butter-cms.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'culture-portal-writers';
+
+  public title: string = 'culture-portal-writers';
+
   constructor() {}
 }

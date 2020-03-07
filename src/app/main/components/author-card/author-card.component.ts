@@ -9,7 +9,7 @@ export class AuthorCardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }
