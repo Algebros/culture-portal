@@ -1,0 +1,5 @@
+@import "index";
+
+#map {
+  @include size(400px, 300px);
+}
