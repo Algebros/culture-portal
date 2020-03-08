@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { MobileMenuComponent } from './components/header/mobile-menu/mobile-menu.component';
+import { CoreRoutingModule } from './core-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MobileMenuComponent } from './components/header/mobile-menu/mobile-menu
   ],
   imports: [
     CommonModule,
+    CoreRoutingModule,
     MatButtonModule,
     MatMenuModule,
     MatDividerModule,
