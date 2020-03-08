@@ -12,6 +12,8 @@ import { AuthorsComponent } from './pages/authors/authors.component';
 import { StyleGuildeComponent } from './pages/style-guilde/style-guilde.component';
 import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
 import { WorksComponent } from './components/works/works.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { YoutubeVideoModalComponent } from './components/youtube-video-modal/youtube-video-modal.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,15 @@ import { WorksComponent } from './components/works/works.component';
     AuthorsComponent,
     StyleGuildeComponent,
     DeveloperCardComponent,
-    WorksComponent
+    WorksComponent,
+    YoutubeVideoModalComponent
+  ],
+  entryComponents: [
+    YoutubeVideoModalComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatDialogModule,
   ]
 })
 export class MainModule { }
