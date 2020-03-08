@@ -1,14 +1,14 @@
 @import "index";
 
-::ng-deep .mat-menu-panel {
+:host::ng-deep .mat-menu-panel {
   min-width: 50px !important;
 }
 
-::ng-deep .mat-menu-content {
+:host::ng-deep .mat-menu-content {
   padding: 0 !important;
 }
 
-::ng-deep .mat-menu-item {
+:host::ng-deep .mat-menu-item {
   outline: 0 !important;
 }
 
