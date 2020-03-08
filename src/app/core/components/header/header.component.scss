@@ -15,7 +15,7 @@
 .header {
   @include box-shadow(0, 4px, 4px, 0, rgba(0, 0, 0, 0.25));
 
-  background-color: $grey;
+  background-color: $bg-grey;
 
   .wrapper {
     @include flex(space-between, center);
@@ -24,19 +24,19 @@
     margin: 0 auto;
 
     .logo {
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: $sm) {
         @include size(25px);
       }
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: $md) {
         @include size(30px);
       }
 
-      @media screen and (max-width: $desktop) {
+      @media screen and (max-width: $lg) {
         @include size(35px);
       }
 
-      @media screen and (min-width: $desktop) {
+      @media screen and (min-width: $lg) {
         @include size(40px);
       }
     }
@@ -55,7 +55,7 @@
           margin: 0 20px;
 
           a {
-            @include font(18px, $black70, 500, $font: $roboto);
+            @include font(18px, $black75, 500);
 
             padding: 10px;
 
@@ -72,34 +72,34 @@
 
       .lang-btn {
         outline: none;
-        color: $black70;
+        color: $black75;
       }
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: $md) {
         display: none;
       }
     }
 
     .mobile-menu {
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: $md) {
         display: block;
       }
 
-      @media screen and (min-width: $tablet) {
+      @media screen and (min-width: $md) {
         display: none;
       }
     }
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $sm) {
     height: 45px;
   }
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $md) {
     height: 60px;
   }
 
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $lg) {
     height: 75px;
   }
 }
