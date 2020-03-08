@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MainRoutingModule } from './main-routing.module';
 import { AuthorComponent } from './pages/author/author.component';
 import { AuthorCardComponent } from './components/author-card/author-card.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
@@ -9,7 +10,7 @@ import { TeamComponent } from './pages/team/team.component';
 import { MapComponent } from './components/map/map.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthorsComponent } from './pages/authors/authors.component';
-import { StyleGuildeComponent } from './pages/style-guilde/style-guilde.component';
+import { StyleguideComponent } from './pages/styleguide/styleguide.component';
 import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
 import { WorksComponent } from './components/works/works.component';
 
@@ -24,12 +25,13 @@ import { WorksComponent } from './components/works/works.component';
     MapComponent,
     HomeComponent,
     AuthorsComponent,
-    StyleGuildeComponent,
+    StyleguideComponent,
     DeveloperCardComponent,
-    WorksComponent
+    WorksComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MainRoutingModule
   ]
 })
 export class MainModule { }
