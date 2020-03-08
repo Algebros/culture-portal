@@ -13,84 +13,106 @@
 }
 
 .header {
+  @include box-shadow(0, 4px, 4px, 0, rgba(0, 0, 0, 0.25));
+
   background-color: $grey;
-  @include headerBoxShadow;
+
   .wrapper {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
     @include size(80%, 100%);
+
+    margin: 0 auto;
+
     .logo {
       @media screen and (max-width: $mobile) {
         @include size(25px);
       }
+
       @media screen and (max-width: $tablet) {
         @include size(30px);
       }
+
       @media screen and (max-width: $desktop) {
         @include size(35px);
       }
+
       @media screen and (min-width: $desktop) {
         @include size(40px);
       }
     }
+
     .nav {
-      display: flex;
+      @include flex();
+
       .menu {
-        display: flex;
-        list-style: none;
-        align-items: center;
+        @include flex($align: center);
+
         margin: 0;
+
+        list-style: none;
+
         &__item {
           margin: 0 20px;
+
           a {
-            font-family: $roboto;
-            color: $black70;
-            font-size: 18px;
-            font-weight: 500;
-            text-decoration: none;
+            @include font(18px, $black70, 500, $font: $roboto);
+
             padding: 10px;
+
+            text-decoration: none;
+
             &:hover:not(.current-page) {
-              @include hoverInsetBorder;
+              @include borderInsetHover(2px);
+
+              transition: .8s ease;
             }
           }
         }
       }
+
       .lang-btn {
         outline: none;
         color: $black70;
       }
+
       @media screen and (max-width: $tablet) {
         display: none;
       }
     }
+
     .mobile-menu {
       @media screen and (max-width: $tablet) {
         display: block;
       }
+
       @media screen and (min-width: $tablet) {
         display: none;
       }
     }
   }
+
   @media screen and (max-width: $mobile) {
     height: 45px;
   }
+
   @media screen and (min-width: $tablet) {
     height: 60px;
   }
+
   @media screen and (min-width: $desktop) {
     height: 75px;
   }
 }
 
 .current-page {
-  color: black !important;
   position: relative;
+
+  color: black !important;
+
   &::after {
-    content: '';
     @include size(100%, 2px);
     @include underline(black);
+
+    content: '';
   }
 }

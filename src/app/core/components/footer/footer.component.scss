@@ -1,31 +1,36 @@
 @import "index";
 
 .footer {
-  background-color: $blue;
-  @include flexRowCenter;
   @include size(100%, 80px);
-  @include footerBoxShadow;
-  color: white;
-  font-family: $roboto;
-  font-size: 20px;
+  @include flex(center, center);
+  @include font(20px, white, $font: $roboto);
+  @include box-shadow(0, -6px, 12px, 0, rgba(45, 45, 68, 0.3));
+
+  background-color: $blue;
+
   .inscription {
-    @include flexRowCenter;
+    @include flex(center, center);
+
     .symbol {
       font-weight: bold;
     }
+
     .heart {
-      width: 20px;
-      height: 20px;
-      background-image: url(./../../../../assets/icons/heart.svg);
-      background-size: cover;
+      @include size(20px);
+
       margin: 0 5px;
-      cursor: pointer;
+
+      background-image: url(./../../../../assets/icons/heart.svg);
       transition: all .8s ease-in-out;
+      background-size: cover;
+      cursor: pointer;
+
       &:hover {
         transform: scale(1.5);
       }
     }
   }
+
   @media screen and (max-width: $tablet) {
     height: 50px;
   }
