@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import "index";
+
+html, body {
+  @include size(100%);
+
+  box-sizing: border-box;
+
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
