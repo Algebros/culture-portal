@@ -9,16 +9,18 @@
 }
 
 .lang-icon {
+  @include flex(center);
+
   width: 100%;
-  display: flex;
-  justify-content: center;
+
   margin: 5px 0;
 }
 
 .group-btn {
+  @include flex($wrap: nowrap);
+
   width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
+
   &__item {
     flex-basis: 33%;
   }
