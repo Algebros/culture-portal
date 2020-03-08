@@ -2,18 +2,18 @@
   "name": "culture-portal-writers",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve --open=true",
     "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "lint-fix": "tslint --fix --project ./tsconfig.json",
-    "e2e": "ng e2e",
+    "jamstack": "ng build --prod && npx scully --nw",
+    "scully:scan": "scully -- --scanRoutes",
+    "scully:serve": "scully serve",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "scully": "scully",
-    "scully:serve": "scully serve",
-    "jamstack": "ng build --prod && npx scully --nw"
+    "lint": "ng lint",
+    "lint:fix": "tslint --fix --project ./tsconfig.json",
+    "ng": "ng",
+    "e2e": "ng e2e",
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
