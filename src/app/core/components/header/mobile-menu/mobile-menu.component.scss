@@ -1,0 +1,25 @@
+@import "index";
+
+::ng-deep .mat-menu-item {
+  outline: 0 !important;
+}
+
+.menu-btn {
+  outline: none;
+}
+
+.lang-icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.group-btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  &__item {
+    flex-basis: 33%;
+  }
+}
