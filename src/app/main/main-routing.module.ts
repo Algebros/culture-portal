@@ -5,7 +5,6 @@ import { AuthorsComponent } from './pages/authors/authors.component';
 import { AuthorComponent } from './pages/author/author.component';
 import { TeamComponent } from './pages/team/team.component';
 import { WorklogComponent } from './pages/worklog/worklog.component';
-import { StyleguideComponent } from './pages/styleguide/styleguide.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'en' },
@@ -13,8 +12,7 @@ const routes: Routes = [
   { path: ':language/authors', component: AuthorsComponent },
   { path: ':language/author/:id', component: AuthorComponent },
   { path: ':language/team', component: TeamComponent },
-  { path: ':language/worklog', component: WorklogComponent },
-  { path: ':language/styleguide', component: StyleguideComponent },
+  { path: ':language/worklog', component: WorklogComponent }
 ];
 
 @NgModule({
