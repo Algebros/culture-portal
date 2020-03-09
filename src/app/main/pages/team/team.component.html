@@ -5,7 +5,7 @@
         <p class="team-head__hint">Hover for more information</p>
       </div>
     <div class="team-body">
-      <app-developer-card *ngFor="let developer of developers" [developer]="developer"></app-developer-card>
+      <app-developer-card *ngFor="let developer of this.contentService.developers" [developer]="developer"></app-developer-card>
     </div>
   </div>
 </div>
