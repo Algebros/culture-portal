@@ -1,1 +1,9 @@
-<p>developer-card works!</p>
+<div class="team-card">
+  <img class="team-card__image" src="{{developer.avatar}}" alt="avatar">
+  <span class="team-card__name">{{developer.name}}</span>
+  <span class="team-card__contribution">{{developer.contribution}}</span>
+  <div class="team-card__inner">
+    <img class="team-card__icon" src="../../../../assets/icons/github.svg" alt="github icon">
+    <a class="team-card__github" href="{{developer.github}}">{{developer.github.replace('https://', '')}}</a>
+  </div>
+</div>

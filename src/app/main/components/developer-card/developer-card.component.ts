@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import Developer from '../../models/developer.model';
 
 @Component({
   selector: 'app-developer-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./developer-card.component.scss']
 })
 export class DeveloperCardComponent implements OnInit {
+
+  @Input() public developer: Developer;
 
   constructor() { }
 

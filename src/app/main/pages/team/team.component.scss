@@ -1,0 +1,91 @@
+@import 'index';
+
+:host {
+  background: $bg-grey;
+}
+
+.team {
+  @include size(100%);
+  @include font($font: 'Roboto Slab');
+
+  background: $bg-grey;
+
+  &__inner {
+    @include flex($direction: column);
+
+    max-width: $lg;
+
+    margin: 0 auto;
+    padding: 0 75px;
+
+    @media screen and (max-width: $md) {
+      padding: 0;
+    }
+  }
+}
+
+.team-head {
+  @include size(100%, 90px);
+  @include relative(top 0 left 0);
+
+  margin-top: 5%;
+  margin-bottom: 3%;
+
+  @media screen and (max-width: $lg) {
+    text-align: center;
+  }
+
+  &:before {
+    @include size(4px, 90px);
+    @include absolute(top 0 left -75px);
+
+    background: black;
+    content: '';
+
+    @media screen and (max-width: $xl) {
+      visibility: hidden;
+    }
+  }
+
+  &__header {
+    margin: 0;
+
+    @media screen and (min-width: $xs) {
+      @include font(32px);
+    }
+
+    @media screen and (min-width: $sm) {
+      @include font(36px);
+    }
+
+    @media screen and (min-width: $md) {
+      @include font(40px);
+    }
+
+    @media screen and (min-width: $lg) {
+      @include font(44px);
+    }
+
+    @media screen and (min-width: $xl) {
+      @include font(48px);
+    }
+  }
+
+  &__hint {
+    @include font(14px, $black75);
+
+    margin: 0;
+  }
+}
+
+.team-body {
+  @include flex($align: center, $wrap: wrap);
+
+  @media screen and (min-width: $xs) {
+    justify-content: center;
+  }
+
+  @media screen and (min-width: $lg) {
+    justify-content: space-between;
+  }
+}
