@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IWorklog } from '../../models/worklog.model';
+import { WorklogService } from '../../services/worklog.service';
 
 @Component({
   selector: 'app-worklog',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorklogComponent implements OnInit {
 
-  constructor() { }
+  public worklog: IWorklog[];
+  public columns: string[] = ['feature', 'time'];
+
+  constructor(private worklogService: WorklogService) { }
 
   public ngOnInit(): void {
+    this.worklog = this.worklogService.getWorklog();
   }
 
 }
