@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import Work from '../../models/work.model';
 
 @Component({
   selector: 'app-works',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./works.component.scss']
 })
 export class WorksComponent implements OnInit {
+  @Input() public works: Work[];
+
+  public displayedColumns: string[] = ['date', 'description'];
+  public dataSource: Work[] = this.works;
 
   constructor() { }
 

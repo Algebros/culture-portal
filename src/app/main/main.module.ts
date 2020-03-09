@@ -15,6 +15,7 @@ import { StyleguideComponent } from './pages/styleguide/styleguide.component';
 import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
 import { WorksComponent } from './components/works/works.component';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     CommonModule,
     MainRoutingModule,
     MatStepperModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
   ]
 })
 export class MainModule { }
