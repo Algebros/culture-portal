@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StyleGuildeComponent } from './style-guilde.component';
+import { StyleguideComponent } from './styleguide.component';
 
-describe('StyleGuildeComponent', () => {
-  let component: StyleGuildeComponent;
-  let fixture: ComponentFixture<StyleGuildeComponent>;
+describe('StyleguideComponent', () => {
+  let component: StyleguideComponent;
+  let fixture: ComponentFixture<StyleguideComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StyleGuildeComponent ]
+      declarations: [ StyleguideComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StyleGuildeComponent);
+    fixture = TestBed.createComponent(StyleguideComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

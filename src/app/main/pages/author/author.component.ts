@@ -15,8 +15,8 @@ export class AuthorComponent {
 
   public openModal(): void {
    this.dialog.open(YoutubeVideoModalComponent, {
-     width: '300px',
-     height: '300px',
+     width: '800px',
+     height: '500px',
      data: {
        videoLink: this.author.youtube
      }
