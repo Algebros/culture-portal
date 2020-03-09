@@ -25,7 +25,15 @@
       "header": "Наша команда"
     },
     "worklog": {
-      "header": "Журнал"
+      "header": "Журнал",
+      "developer": {
+        "anhelina-lakhtanava": "Ангелина Лахтанова",
+        "denis-paragas": "Денис Парáгас",
+        "katsiaryna-zhdanovich": "Екатерина Жданович",
+        "sofroniy-miadvedzeu": "Софроний Медведев",
+        "yauhen-pachankou": "Евгений Колоницкий",
+        "yauhen-kalanitski": "Евгений Поченков"
+      }
     }
   }
 }

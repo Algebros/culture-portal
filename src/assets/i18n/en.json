@@ -25,7 +25,15 @@
       "header": "Meet our team"
     },
     "worklog": {
-      "header": "Worklog"
+      "header": "Worklog",
+      "developer": {
+        "anhelina-lakhtanava": "Anhelina Lakhtanava",
+        "denis-paragas": "Denis Parágas",
+        "katsiaryna-zhdanovich": "Katsiaryna Zhdanovich",
+        "sofroniy-miadvedzeu": "Sofroniy Miadvedzeu",
+        "yauhen-pachankou": "Yauhen Kalanitski",
+        "yauhen-kalanitski": "Yauhen Pachankou"
+      }
     }
   }
 }

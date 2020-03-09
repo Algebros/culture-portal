@@ -25,7 +25,15 @@
       "header": "Наша кaманда"
     },
     "worklog": {
-      "header": "Журнал"
+      "header": "Журнал",
+      "developer": {
+        "anhelina-lakhtanava": "Ангеліна Лахтанава",
+        "denis-paragas": "Дзянiс Парáгас",
+        "katsiaryna-zhdanovich": "Кацярына Ждановiч",
+        "sofroniy-miadvedzeu": "Сафронiй Мядзведзеў",
+        "yauhen-pachankou": "Яўген Каланiцкi",
+        "yauhen-kalanitski": "Яўген Пачанкоў"
+      }
     }
   }
 }
