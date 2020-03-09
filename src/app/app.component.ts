@@ -1,4 +1,7 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
+
+import { LanguageService } from './main/services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +12,8 @@ export class AppComponent {
 
   public title: string = 'culture-portal-writers';
 
-  constructor() {}
+  constructor(private languageService: LanguageService, private translateService: TranslateService) {
+    this.translateService.setDefaultLang(this.languageService.language);
+  }
+
 }

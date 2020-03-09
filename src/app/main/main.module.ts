@@ -18,6 +18,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { YoutubeVideoModalComponent } from './components/youtube-video-modal/youtube-video-modal.component';
 import {VideoModalService} from './services/video-modal.service';
 import { MatStepperModule } from '@angular/material/stepper';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatDialogModule,
     MainRoutingModule,
     MatStepperModule,
-    MatButtonModule
+    MatButtonModule,
+    TranslateModule
   ],
   providers: [
     VideoModalService

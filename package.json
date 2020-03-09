@@ -27,6 +27,8 @@
     "@angular/platform-browser": "~9.0.0",
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^4.0.0",
     "@scullyio/init": "0.0.23",
     "@scullyio/ng-lib": "latest",
     "@scullyio/scully": "latest",
