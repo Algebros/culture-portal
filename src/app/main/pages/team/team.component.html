@@ -1,1 +1,11 @@
-<p>team works!</p>
+<div class="team">
+  <div class="team__inner">
+      <div class="team-head">
+        <p class="team-head__header">Meet our team</p>
+        <p class="team-head__hint">Hover for more information</p>
+      </div>
+    <div class="team-body">
+      <app-developer-card *ngFor="let developer of developers" [developer]="developer"></app-developer-card>
+    </div>
+  </div>
+</div>
