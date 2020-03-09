@@ -1,16 +1,18 @@
 /* ----- Colors ----- */
 
-$grey: #F3F3F3;
-$black70: #494949;
-$black50: #797979;
-$blue: #2D2D44;
+$bg-grey: hsl(0, 0%, 95%);
+$bg-purple: hsl(240, 20%, 22%);
+$bg-yellow: hsl(54, 68%, 91%);
+$bg-green: hsl(77, 26%, 95%);
 
-/* ----- Media queries ----- */
+$black25:  hsla(0, 0%, 0%, 0.25);
+$black50: hsla(0, 0%, 0%, 0.5);
+$black75: hsla(0, 0%, 0%, 0.75);
 
-$mobile: 820px;
-$tablet: 1025px;
-$desktop: 1440px;
+/* ----- Material Design Breakpoints ----- */
 
-/* ----- Fonts ----- */
-
-$roboto: Roboto, sans-serif;
+$xs: 320px;
+$sm: 600px;
+$md: 960px;
+$lg: 1280px;
+$xl: 1440px;

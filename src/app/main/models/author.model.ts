@@ -13,7 +13,7 @@ export default interface Author {
   quote: string;
   summary: string;
   youtube: string;
-  gallery: string;
+  images: string;
   works: Work[];
   timeline: Activity[];
   locations: Location[];

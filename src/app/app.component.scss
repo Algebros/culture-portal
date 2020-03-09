@@ -1,0 +1,18 @@
+@import 'index';
+
+.body-inner {
+  @include flex($direction: column);
+  @include size(100%);
+}
+
+app-header {
+  flex: 0 0 auto;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+app-footer {
+  flex: 0 0 auto;
+}
