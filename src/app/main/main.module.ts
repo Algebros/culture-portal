@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainRoutingModule } from './main-routing.module';
@@ -13,6 +14,7 @@ import { AuthorsComponent } from './pages/authors/authors.component';
 import { StyleguideComponent } from './pages/styleguide/styleguide.component';
 import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
 import { WorksComponent } from './components/works/works.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { WorksComponent } from './components/works/works.component';
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    MatStepperModule,
+    MatButtonModule
   ]
 })
 export class MainModule { }
