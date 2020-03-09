@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { LanguageService } from '../../../../main/services/language.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class MobileMenuComponent implements OnInit {
 
   public clickHandler(event: MouseEvent): void {
     const language: string = (event.target as HTMLButtonElement).innerText.toLowerCase();
-
     this.languageService.changeLanguage.next(language);
   }
+
 }

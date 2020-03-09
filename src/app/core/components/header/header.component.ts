@@ -16,4 +16,5 @@ export class HeaderComponent implements OnInit {
   public clickHandler(event: MouseEvent): void {
     this.languageService.changeLanguage.next((event.target as HTMLButtonElement).dataset.language);
   }
+
 }

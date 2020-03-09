@@ -3,29 +3,28 @@
 </button>
 
 <mat-menu class="menu" #beforeMenu="matMenu" xPosition="before">
-
   <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language]">
     <mat-icon>home</mat-icon>{{'header.nav.home' | translate}}
   </button>
-
+  
   <mat-divider></mat-divider>
-
+  
   <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language, 'authors']">
     <mat-icon>library_books</mat-icon>{{'header.nav.writers' | translate}}
   </button>
-
+  
   <mat-divider></mat-divider>
-
+  
   <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language,'team']">
     <mat-icon>people_alt</mat-icon>{{'header.nav.team'| translate}}
   </button>
-
+  
   <mat-divider></mat-divider>
-
+  
   <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language,'styleguide']">
     <mat-icon>assignment</mat-icon>{{'header.nav.styleguide' | translate}}
   </button>
-
+  
   <mat-divider></mat-divider>
 
   <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language,'worklog']">
