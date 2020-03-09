@@ -1,6 +1,5 @@
 export default interface Activity {
   id: number;
-  date: Date;
-  header: string;
+  date: string;
   content: string;
 }
