@@ -1,0 +1,34 @@
+{
+  "header": {
+    "nav": {
+      "home": "ГЛАВНАЯ",
+      "writers": "ПИСАТЕЛИ",
+      "team": "КОМАНДА",
+      "styleguide": "СТАЙЛГАЙД",
+      "worklog": "ЖУРНАЛ"
+    }
+  },
+  "footer": {
+
+  },
+  "page": {
+    "home": {
+
+    },
+    "authors": {
+
+    },
+    "author": {
+
+    },
+    "team": {
+      "header": "Наша команда"
+    },
+    "styleguide": {
+
+    },
+    "worklog": {
+
+    }
+  }
+}
