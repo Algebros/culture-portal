@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import Activity from '../../models/activity.model';
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss']
 })
-export class TimelineComponent implements OnInit {
+export class TimelineComponent {
+  @Input() public biography: Activity[];
 
-  constructor() { }
+  public isLinear: boolean = false;
 
-  public ngOnInit(): void {
-  }
+  constructor() {}
 
 }

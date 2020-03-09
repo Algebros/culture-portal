@@ -1,24 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import butterService from '../../../core/services/butter-cms.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { LanguageService } from '../../services/language.service';
-import Developer from '../../models/developer.model';
+import { ContentService } from '../../services/content.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.scss']
 })
-export class TeamComponent implements OnInit {
+export class TeamComponent implements OnInit, OnDestroy {
 
-  public developers: Developer[];
+  private subscription: Subscription;
 
-  constructor(public languageService: LanguageService) { }
+  constructor(public contentService: ContentService, private languageService: LanguageService) {
+    this. subscription = this.languageService.changeLanguage.subscribe(() => {
+      this.contentService.getDevelopers();
+    });
+  }
 
   public ngOnInit(): void {
-    butterService.content
-      .retrieve(['developer'], { locale: this.languageService.language })
-      .then(response => this.developers = response.data.data.developer)
-      .catch(error => console.log(error));
+    this.contentService.getDevelopers();
+  }
+
+  public ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }

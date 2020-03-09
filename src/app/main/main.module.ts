@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainRoutingModule } from './main-routing.module';
@@ -16,6 +17,7 @@ import { WorksComponent } from './components/works/works.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { YoutubeVideoModalComponent } from './components/youtube-video-modal/youtube-video-modal.component';
 import {VideoModalService} from './services/video-modal.service';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import {VideoModalService} from './services/video-modal.service';
     CommonModule,
     MatDialogModule,
     MainRoutingModule,
+    MatStepperModule,
+    MatButtonModule
   ],
   providers: [
     VideoModalService
