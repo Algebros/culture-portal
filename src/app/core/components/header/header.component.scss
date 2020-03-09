@@ -1,10 +1,10 @@
 @import "index";
 
-:host::ng-deep .mat-menu-panel {
+::ng-deep .mat-menu-panel {
   min-width: 50px !important;
 }
 
-:host::ng-deep .mat-menu-content {
+::ng-deep .mat-menu-content {
   padding: 0 !important;
 }
 
