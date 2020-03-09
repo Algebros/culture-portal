@@ -1,15 +1,17 @@
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
+import { MobileMenuComponent } from './components/header/mobile-menu/mobile-menu.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErrorComponent } from './pages/error/error.component';
-import { MobileMenuComponent } from './components/header/mobile-menu/mobile-menu.component';
 import { CoreRoutingModule } from './core-routing.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { CoreRoutingModule } from './core-routing.module';
     MatMenuModule,
     MatDividerModule,
     MatIconModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    TranslateModule,
   ],
   exports: [
     HeaderComponent,

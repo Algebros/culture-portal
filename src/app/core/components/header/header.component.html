@@ -4,43 +4,20 @@
     <app-mobile-menu class="mobile-menu"></app-mobile-menu>
     <nav class="nav">
       <ul class="menu">
-        <li class="menu__item"><a [routerLink]="['home', this.languageService.language]">{{ labels.home | uppercase }}</a></li>
-        <li class="menu__item"><a [routerLink]="['home', this.languageService.language, 'authors']">{{ labels.writers | uppercase }}</a></li>
-        <li class="menu__item"><a [routerLink]="['home', this.languageService.language,'team']">{{ labels.team | uppercase }}</a></li>
-        <li class="menu__item"><a [routerLink]="['home', this.languageService.language,'worklog']">{{ labels.worklog | uppercase }}</a></li>
+        <li class="menu__item"><a [routerLink]="['home', this.languageService.language]">{{'header.nav.home' | translate}}</a></li>
+        <li class="menu__item"><a [routerLink]="['home', this.languageService.language, 'authors']">{{'header.nav.writers' | translate}}</a></li>
+        <li class="menu__item"><a [routerLink]="['home', this.languageService.language,'team']">{{'header.nav.team'| translate}}</a></li>
+        <li class="menu__item"><a [routerLink]="['home', this.languageService.language,'styleguide']">{{'header.nav.styleguide' | translate}}</a></li>
+        <li class="menu__item"><a [routerLink]="['home', this.languageService.language,'worklog']">{{'header.nav.worklog' | translate}}</a></li>
       </ul>
       <button class="lang-btn" mat-icon-button [matMenuTriggerFor]="beforeMenu">
         <mat-icon>language</mat-icon>
       </button>
       <mat-menu class="lang-menu" #beforeMenu="matMenu" xPosition="before">
-        <button class="lang-menu__item" mat-menu-item *ngFor="let lang of languages" (click)="clickHandler($event.target.innerText)">
-          {{lang | uppercase}}
-        </button>
+        <button class="lang-menu__item" mat-menu-item data-language="en" (click)="clickHandler($event)">EN</button>
+        <button class="lang-menu__item" mat-menu-item data-language="ru" (click)="clickHandler($event)">RU</button>
+        <button class="lang-menu__item" mat-menu-item data-language="be" (click)="clickHandler($event)">BE</button>
       </mat-menu>
     </nav>
   </div>
 </header>
-
-<!--Temporary block start-->
-<!---->
-<!--<div>-->
-<!--  <h5>Change language example</h5>-->
-<!--  <div>-->
-<!--    <button data-language="en" (click)="clickHandler($event)">EN</button>-->
-<!--    <button data-language="ru" (click)="clickHandler($event)">RU</button>-->
-<!--    <button data-language="be" (click)="clickHandler($event)">BE</button>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <h5>Temporary navigation block</h5>-->
-<!--    <div>-->
-<!--      <button [routerLink]="['home', this.languageService.language]">Home</button>-->
-<!--      <button [routerLink]="['home', this.languageService.language, 'authors']">Authors</button>-->
-<!--      <button [routerLink]="['home', this.languageService.language, 'author', '007']">Author</button>-->
-<!--      <button [routerLink]="['home', this.languageService.language,'team']">Team</button>-->
-<!--      <button [routerLink]="['home', this.languageService.language,'worklog']">Worklog</button>-->
-<!--      <button [routerLink]="['home', this.languageService.language,'styleguide']">Style-guide</button>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!---->
-<!--end-->

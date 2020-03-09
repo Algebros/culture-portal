@@ -1,8 +1,10 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Injectable } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+
 import { distinctUntilChanged } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +15,14 @@ export class LanguageService {
   public changeLanguage: Subject<string> = new Subject();
   public language: string;
 
-  constructor(private location: Location, private router: Router) {
+  constructor(private location: Location,
+              private router: Router,
+              private translateService: TranslateService) {
 
     // Define language by url, works on first page load
     this.language = this.getLanguageFromUrl();
 
-    // Navigate new route on language change
+    // Navigate new route on language change + reset ngx
     this.changeLanguage
       .pipe(distinctUntilChanged())
       .subscribe((property) => {
@@ -27,9 +31,8 @@ export class LanguageService {
         }
 
         this.language = this.languages[property];
+        this.translateService.setDefaultLang(this.language);
         this.router.navigate([this.router.url.replace(/en|ru|be/, this.language)]);
-
-        console.log('[Language changed]:', this.language);
       });
   }
 
