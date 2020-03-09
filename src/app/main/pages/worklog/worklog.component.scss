@@ -1,0 +1,19 @@
+:host {
+  margin: 20px;
+}
+
+
+
+h3, h2 {
+  text-align: center;
+  padding: 20px;
+}
+
+table {
+  min-width: 50%;
+  margin: 0 auto;
+}
+
+tr:nth-child(even) {
+  background-color: #C9E4F6;
+}
