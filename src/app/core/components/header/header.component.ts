@@ -1,5 +1,9 @@
 import { Router } from '@angular/router';
+<<<<<<< HEAD
 import { HEADER_LABELS } from './../../constants/header.labels';
+=======
+import { HEADER_LABELS } from '../../constants/header.labels';
+>>>>>>> 1e25872255a396151b7d49cc5f9991dc33bd6717
 import { Component, OnInit } from '@angular/core';
 import { HeaderLocale } from '../../models/header.model';
 import { LanguageService } from '../../../main/services/language.service';
@@ -23,6 +27,10 @@ export class HeaderComponent implements OnInit {
 
   // Change language click handler example
   public clickHandler(event: MouseEvent): void {
+<<<<<<< HEAD
     this.languageService.changeLanguage.next(event.target.dataset.language);
+=======
+    this.languageService.changeLanguage.next((event.target as HTMLButtonElement).dataset.language);
+>>>>>>> 1e25872255a396151b7d49cc5f9991dc33bd6717
   }
 }
