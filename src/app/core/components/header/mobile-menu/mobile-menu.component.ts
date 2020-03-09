@@ -1,7 +1,6 @@
-import { HEADER_LABELS } from '../../../constants/header.labels';
 import { Component, OnInit } from '@angular/core';
-import { HeaderLocale } from 'src/app/core/models/header.model';
-import { Router } from '@angular/router';
+
+import { LanguageService } from '../../../../main/services/language.service';
 
 @Component({
   selector: 'app-mobile-menu',
@@ -10,34 +9,14 @@ import { Router } from '@angular/router';
 })
 export class MobileMenuComponent implements OnInit {
 
-  public labels: HeaderLocale;
-  public languages: Array<string>;
-
-  constructor(private _router: Router) { }
+  constructor(public languageService: LanguageService) { }
 
   public ngOnInit(): void {
-    this.labels = HEADER_LABELS[localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en'];
-    this.languages = HEADER_LABELS.languages;
   }
 
-  public navigateToHome(): void {
-    this._router.navigateByUrl('');
-  }
+  public clickHandler(event: MouseEvent): void {
+    const language: string = (event.target as HTMLButtonElement).innerText.toLowerCase();
 
-  public navigateToWriters(): void {
-    this._router.navigateByUrl('');
+    this.languageService.changeLanguage.next(language);
   }
-
-  public navigateToTeam(): void {
-    this._router.navigateByUrl('');
-  }
-
-  public navigateToWorklog(): void {
-    this._router.navigateByUrl('');
-  }
-
-  public changeLanguageSettings($event: MouseEvent): void {
-    // implement when the translation service is completed
-  }
-
 }
