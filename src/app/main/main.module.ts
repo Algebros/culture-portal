@@ -14,6 +14,9 @@ import { AuthorsComponent } from './pages/authors/authors.component';
 import { StyleguideComponent } from './pages/styleguide/styleguide.component';
 import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
 import { WorksComponent } from './components/works/works.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { YoutubeVideoModalComponent } from './components/youtube-video-modal/youtube-video-modal.component';
+import {VideoModalService} from './services/video-modal.service';
 import { MatStepperModule } from '@angular/material/stepper';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -31,13 +34,21 @@ import { TranslateModule } from '@ngx-translate/core';
     StyleguideComponent,
     DeveloperCardComponent,
     WorksComponent,
+    YoutubeVideoModalComponent
+  ],
+  entryComponents: [
+    YoutubeVideoModalComponent
   ],
   imports: [
     CommonModule,
+    MatDialogModule,
     MainRoutingModule,
     MatStepperModule,
     MatButtonModule,
     TranslateModule
+  ],
+  providers: [
+    VideoModalService
   ]
 })
 export class MainModule { }
