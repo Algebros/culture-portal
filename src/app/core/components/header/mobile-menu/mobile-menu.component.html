@@ -2,28 +2,28 @@
   <mat-icon>menu</mat-icon>
 </button>
 <mat-menu class="menu" #beforeMenu="matMenu" xPosition="before">
-  <button class="menu__item" mat-menu-item (click)="navigateToHome()">
+  <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language]">
     <mat-icon>home</mat-icon>
     {{ labels.home | uppercase }}
   </button>
   <mat-divider></mat-divider>
-  <button class="menu__item" mat-menu-item (click)="navigateToWriters()">
+  <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language, 'authors']">
     <mat-icon>library_books</mat-icon>
     {{ labels.writers | uppercase }}
   </button>
   <mat-divider></mat-divider>
-  <button class="menu__item" mat-menu-item (click)="navigateToTeam()">
+  <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language,'team']">
     <mat-icon>people_alt</mat-icon>
     {{ labels.team | uppercase }}
   </button>
   <mat-divider></mat-divider>
-  <button class="menu__item" mat-menu-item (click)="navigateToWorklog()">
+  <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language,'worklog']">
     <mat-icon>assignment</mat-icon>
     {{ labels.worklog | uppercase }}
   </button>
   <mat-divider></mat-divider>
   <mat-icon class="lang-icon">language</mat-icon>
-  <mat-button-toggle-group class="group-btn" name="langSettings" aria-label="Language Settings" (click)="changeLanguageSettings($event)">
-    <mat-button-toggle class="group-btn__item" *ngFor="let lang of languages">{{ lang | uppercase }}</mat-button-toggle>
+  <mat-button-toggle-group class="group-btn" name="langSettings" aria-label="Language Settings" (click)="changeLanguageSettings($event.target.innerText)">
+    <mat-button-toggle class="group-btn__item" *ngFor="let lang of languages">{{lang | uppercase}}</mat-button-toggle>
   </mat-button-toggle-group>
 </mat-menu>
