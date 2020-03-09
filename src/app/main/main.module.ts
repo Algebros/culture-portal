@@ -15,6 +15,7 @@ import { DeveloperCardComponent } from './components/developer-card/developer-ca
 import { WorksComponent } from './components/works/works.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { YoutubeVideoModalComponent } from './components/youtube-video-modal/youtube-video-modal.component';
+import {VideoModalService} from './services/video-modal.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,9 @@ import { YoutubeVideoModalComponent } from './components/youtube-video-modal/you
     CommonModule,
     MatDialogModule,
     MainRoutingModule,
+  ],
+  providers: [
+    VideoModalService
   ]
 })
 export class MainModule { }
