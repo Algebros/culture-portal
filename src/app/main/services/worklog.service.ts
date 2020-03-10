@@ -45,8 +45,6 @@ export class WorklogService {
       const log: IWorklog = {name: '', works: []};
       log.name = val.range.split('!')[0].replace(/\'/g, '');
       val.values.forEach((job) => log.works.push({feature: job[0], time: job[1]}));
-      console.log(log);
-      console.log(this.worklog);
       this.worklog.push(log);
       this.worklog$.next(this.worklog);
     });
@@ -60,7 +58,6 @@ export class WorklogService {
       // tslint:disable-next-line: no-any
     }).subscribe((res: any) => {
       this.developers = res.sheets.map((sheet) => sheet.properties.title);
-      console.log(this.developers);
       this.getJobs();
     });
   }

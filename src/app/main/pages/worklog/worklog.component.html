@@ -1,7 +1,7 @@
 <h2>{{'page.worklog.header' | translate}}</h2>
 
 <div *ngFor="let developer of worklog">
-  <h3>{{developer.name | translate}}</h3>
+  <h3>{{prefix + developer.name | translate}}</h3>
   <table mat-table [dataSource]="developer.works" class="mat-elevation-z8">
     <ng-container matColumnDef="feature">
       <th mat-header-cell *matHeaderCellDef>Feature</th>

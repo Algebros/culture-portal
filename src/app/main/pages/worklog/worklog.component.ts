@@ -13,11 +13,17 @@ export class WorklogComponent implements OnInit {
   public worklog: IWorklog[];
   public worklog$: Subscription;
   public columns: string[] = ['feature', 'time'];
-
+  public prefix: string = 'page.worklog.developer.';
   constructor(private worklogService: WorklogService) { }
 
   public ngOnInit(): void {
-    this.worklog$ = this.worklogService.getWorklog$().subscribe((worklog) => this.worklog = worklog);
+    this.worklog$ = this.worklogService.getWorklog$().subscribe((worklog) => {
+      this.worklog = worklog;
+    });
+  }
+
+  public ngOnDestroy(): void {
+    this.worklog$.unsubscribe();
   }
 
 }
