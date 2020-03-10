@@ -16,5 +16,6 @@
   ],
   "files": [
     "./typings.d.ts"
-  ]
+  ],
+  "emitDecoratorMetadata": true
 }
