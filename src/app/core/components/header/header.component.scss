@@ -24,20 +24,40 @@
     margin: 0 auto;
 
     .logo {
-      @media screen and (max-width: $sm) {
-        @include size(25px);
+      @include size(25px);
+
+      padding-bottom: 5px;
+
+      @media screen and (min-width: $xs) and (max-width: $md) {
+        padding-bottom: 0;
       }
 
-      @media screen and (max-width: $md) {
-        @include size(30px);
-      }
-
-      @media screen and (max-width: $lg) {
-        @include size(35px);
+      @media screen and (min-width: $md) and (max-width: $lg) {
+        display: none;
       }
 
       @media screen and (min-width: $lg) {
-        @include size(40px);
+        @include size(45px);
+      }
+
+      &__outer {
+        @include flex(center, center);
+      }
+
+      &__title {
+        @include font(18px, $black75, $font: 'Roboto Slab');
+
+        padding-left: 1rem;
+
+        @media screen and (min-width: $md) {
+          @include font(28px);
+
+          padding-bottom: 5px;
+        }
+
+        @media screen and (min-width: $md) and (max-width: $lg) {
+          display: none;
+        }
       }
     }
 
@@ -47,12 +67,13 @@
       .menu {
         @include flex($align: center);
 
+        padding: 0;
         margin: 0;
 
         list-style: none;
 
         &__item {
-          margin: 0 20px;
+          margin: 0 1rem;
 
           a {
             @include font(18px, $bg-purple);
@@ -73,8 +94,14 @@
       }
 
       .lang-btn {
-        outline: none;
         color: $black75;
+        outline: none;
+
+        & mat-icon {
+          margin-bottom: 5px;
+
+          color: $black75;
+        }
       }
 
       @media screen and (max-width: $md) {
