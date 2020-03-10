@@ -6,12 +6,12 @@
   <table mat-table [dataSource]="developer.works" class="mat-elevation-z8">
     <ng-container matColumnDef="feature">
       <th mat-header-cell *matHeaderCellDef>Feature</th>
-      <td mat-cell *matCellDef= "let work">{{work.feature}}</td>
+      <td mat-cell *matCellDef= "let work;">{{work.feature}}</td>
     </ng-container>
 
     <ng-container matColumnDef="time">
       <th mat-header-cell *matHeaderCellDef>Time spent (hours)</th>
-      <td mat-cell *matCellDef = "let work">{{work.time}}</td>
+      <td mat-cell *matCellDef = "let work;">{{work.time}}</td>
     </ng-container>
 
    <tr mat-header-row *matHeaderRowDef="columns"></tr>
