@@ -60,10 +60,6 @@
 
 // Custom
 
-@mixin borderInsetHover($spread) {
-  @include box-shadow(0, 0, 0, $spread, black, true);
-}
-
 @mixin underline($color) {
   @include absolute(0 0 0 0);
 
