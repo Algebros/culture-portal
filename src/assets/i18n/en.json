@@ -13,13 +13,20 @@
   },
   "page": {
     "home": {
-
+      "quote": "The greatest glory of the people is its writers",
+      "author": "Benjamin Jonson"
     },
     "authors": {
 
     },
     "author": {
-
+      "timeline": {
+        "next-btn": "Next"
+      },
+      "works": {
+        "year": "Year",
+        "title": "Title"
+      }
     },
     "team": {
       "header": "Meet our team"
