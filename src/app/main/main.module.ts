@@ -11,12 +11,11 @@ import { TeamComponent } from './pages/team/team.component';
 import { MapComponent } from './components/map/map.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthorsComponent } from './pages/authors/authors.component';
-import { StyleguideComponent } from './pages/styleguide/styleguide.component';
 import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
 import { WorksComponent } from './components/works/works.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { YoutubeVideoModalComponent } from './components/youtube-video-modal/youtube-video-modal.component';
-import {VideoModalService} from './services/video-modal.service';
+import { VideoModalService } from './services/video-modal.service';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
@@ -32,7 +31,6 @@ import { TranslateModule } from '@ngx-translate/core';
     MapComponent,
     HomeComponent,
     AuthorsComponent,
-    StyleguideComponent,
     DeveloperCardComponent,
     WorksComponent,
     YoutubeVideoModalComponent
@@ -51,6 +49,6 @@ import { TranslateModule } from '@ngx-translate/core';
    ],
   providers: [
     VideoModalService
-  ]  
+  ]
 })
 export class MainModule { }

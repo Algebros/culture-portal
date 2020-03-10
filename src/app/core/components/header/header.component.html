@@ -7,7 +7,7 @@
         <li class="menu__item"><a [routerLink]="['home', this.languageService.language]">{{'header.nav.home' | translate}}</a></li>
         <li class="menu__item"><a [routerLink]="['home', this.languageService.language, 'authors']">{{'header.nav.writers' | translate}}</a></li>
         <li class="menu__item"><a [routerLink]="['home', this.languageService.language,'team']">{{'header.nav.team'| translate}}</a></li>
-        <li class="menu__item"><a [routerLink]="['home', this.languageService.language,'styleguide']">{{'header.nav.styleguide' | translate}}</a></li>
+        <li class="menu__item"><a href="http://github.com">{{'header.nav.styleguide' | translate}}</a></li>
         <li class="menu__item"><a [routerLink]="['home', this.languageService.language,'worklog']">{{'header.nav.worklog' | translate}}</a></li>
       </ul>
       <button class="lang-btn" mat-icon-button [matMenuTriggerFor]="beforeMenu">

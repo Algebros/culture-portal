@@ -24,11 +24,15 @@
     "team": {
       "header": "Meet our team"
     },
-    "styleguide": {
-
-    },
     "worklog": {
-
+      "header": "Worklog",
+      "developer": {
+        "anhelina-lakhtanava": "Anhelina Lakhtanava",
+        "denis-paragas": "Denis Parágas",
+        "katsiaryna-zhdanovich": "Katsiaryna Zhdanovich",
+        "sofroniy-miadvedzeu": "Sofroniy Miadvedzeu",
+        "yauhen-pachankou": "Yauhen Kalanitski",
+        "yauhen-kalanitski": "Yauhen Pachankou"
     },
     "error": {
       "error-text": "404 - PAGE NOT FOUND",

@@ -6,25 +6,25 @@
   <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language]">
     <mat-icon>home</mat-icon>{{'header.nav.home' | translate}}
   </button>
-  
+
   <mat-divider></mat-divider>
-  
+
   <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language, 'authors']">
     <mat-icon>library_books</mat-icon>{{'header.nav.writers' | translate}}
   </button>
-  
+
   <mat-divider></mat-divider>
-  
+
   <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language,'team']">
     <mat-icon>people_alt</mat-icon>{{'header.nav.team'| translate}}
   </button>
-  
+
   <mat-divider></mat-divider>
-  
-  <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language,'styleguide']">
+
+  <a class="menu__item" mat-menu-item href="http://github.com" style="text-decoration: none;">
     <mat-icon>assignment</mat-icon>{{'header.nav.styleguide' | translate}}
-  </button>
-  
+  </a>
+
   <mat-divider></mat-divider>
 
   <button class="menu__item" mat-menu-item [routerLink]="['home', this.languageService.language,'worklog']">
