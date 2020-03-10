@@ -19,7 +19,13 @@
 
     },
     "author": {
-
+      "timeline": {
+        "next-btn": "Далей"
+      },
+      "works": {
+        "year": "Год",
+        "title": "Назва"
+      }
     },
     "team": {
       "header": "Наша кaманда"

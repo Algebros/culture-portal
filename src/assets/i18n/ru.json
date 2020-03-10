@@ -19,7 +19,13 @@
 
     },
     "author": {
-
+      "timeline": {
+        "next-btn": "Дальше"
+      },
+      "works": {
+        "year": "Год",
+        "title": "Название"
+      }
     },
     "team": {
       "header": "Наша команда"

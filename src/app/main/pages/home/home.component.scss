@@ -1,0 +1,11 @@
+@import "index";
+
+.home-container {
+  .author-wrapper {
+    height: 500px;
+    background-color: $bg-grey;
+    .author-of-the-day {
+      max-width: $lg;
+    }
+  }
+}

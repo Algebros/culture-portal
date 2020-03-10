@@ -19,7 +19,13 @@
 
     },
     "author": {
-
+      "timeline": {
+        "next-btn": "Next"
+      },
+      "works": {
+        "year": "Year",
+        "title": "Title"
+      }
     },
     "team": {
       "header": "Meet our team"
