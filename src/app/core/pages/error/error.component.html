@@ -1,1 +1,9 @@
-<p>error works!</p>
+<mat-card class="notfound">
+  <mat-card-header>
+    <mat-card-title>{{"page.error.error-text" | translate}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="./../../../../assets/icons/error.svg" class="img" alt="Error">
+  <mat-card-actions>
+    <button mat-raised-button color="primary" [routerLink]="['home', this.languageService.language]">{{"page.error.home" | translate}}</button>
+  </mat-card-actions>
+</mat-card>

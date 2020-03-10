@@ -1,0 +1,28 @@
+@import "index";
+
+:host {
+  @include flex(center, center);
+  @include mainContainer;
+}
+
+.notfound {
+  max-width: 400px;
+  .img {
+    max-height: 300px;
+    @media screen and (max-height: $sm) and (orientation: landscape) {
+      max-height: 70px;
+    }
+  }
+  mat-card-actions {
+    @include flex(space-evenly);
+  }
+  .mat-card-title {
+    @media screen and (max-height: $sm) and (orientation: landscape) {
+      font-size: 0.8rem;
+    }
+  }
+  @media screen and (max-height: $sm) and (orientation: landscape) {
+    max-height: 200px;
+    max-width: 300px;
+  }
+}

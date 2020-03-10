@@ -71,3 +71,13 @@
 
   background-color: $color;
 }
+
+@mixin mainContainer {
+  height: calc(100vh - 155px);
+  @media screen and (max-width: $lg) {
+    height: calc(100vh - 110px);
+  }
+  @media screen and (max-width: $md) {
+    height: calc(100vh - 95px);
+  }
+}
