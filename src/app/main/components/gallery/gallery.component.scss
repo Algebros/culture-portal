@@ -1,3 +1,5 @@
+@import "index";
+
 $main-color: rgba(0,0,0,0);
 
 .sliderAuthors {
@@ -39,7 +41,8 @@ $main-color: rgba(0,0,0,0);
   .carousel-control .glyphicon-chevron-right,
   .carousel-control .icon-next,
   .carousel-control .icon-prev {
-    top: 20px;
+    top: 10px;
+    line-height: 30px;
     width: 30px;
     height: 30px;
     margin-top: -10px;
@@ -51,6 +54,14 @@ $main-color: rgba(0,0,0,0);
 	left: 30%;
 	bottom: -66px;
 	width: 100%;
+
+  z-index: 1;
+}
+
+.glyphicon-chevron-left,
+.glyphicon-chevron-right {
+  color: $bg-purple;
+  top: 12px;
 }
 
 .carousel-indicators li {
