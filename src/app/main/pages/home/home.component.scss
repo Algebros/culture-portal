@@ -2,10 +2,229 @@
 
 .home-container {
   .author-wrapper {
-    height: 500px;
+    height: 600px;
     background-color: $bg-grey;
+    @include flex();
     .author-of-the-day {
-      max-width: $lg;
+      width: $lg;
+      margin: 0 auto;
+      @include flex(space-between, center);
+      .description {
+        &__heading {
+          position: relative;
+          h1 {
+            margin: 0;
+            @include font($font: 'Roboto Slab', $size: 48px);
+            @media screen and (max-width: $md) {
+              @include font($font: 'Roboto Slab', $size: 35px);
+            }
+          }
+          p {
+            max-width: 500px;
+            @include font($font: 'Roboto Slab', $size: 14px, $color: $black75);
+            margin: 25px 0 40px 0;
+            @media screen and (max-width: $md) {
+              @include font($font: 'Roboto Slab', $size: 12px);
+              max-width: 400px;
+            }
+          }
+          &:before {
+            @include pseudo-line;
+          }
+        }
+        &__button {
+          @include flex(center, center);
+          @include font($font: 'Roboto', $size: 16px, $color: white, $weight: bold);
+          background: #627964;
+          padding: 5px 15px;
+          mat-icon {
+            margin-left: 15px;
+            @media screen and (max-width: $md) {
+              margin-left: 5px;
+            }
+          }
+          &:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            transition: .8s ease;
+          }
+          @media screen and (max-width: $md) {
+            font-size: 14px;
+            padding: 0 10px;
+          }
+        }
+        @media screen and (max-width: $sm) {
+          order: 2;
+          @include flex(center, center, column);
+        }
+      }
+      .author {
+        @include flex(center, center, column);
+        flex-basis: 50%;
+        &__image {
+          max-height: 300px;
+        }
+        &__name {
+          @include font($font: 'Roboto Slab', $size: 18px, $color: black);
+          @media screen and (max-width: $md) {
+            @include font($font: 'Roboto Slab', $size: 16px);
+          }
+          @media screen and (max-width: $sm) {
+            margin: 5px 0;
+          }
+        }
+        &__title {
+          max-width: 350px;
+          text-align: center;
+          @include font($font: 'Roboto Slab', $size: 14px, $color: $black75);
+          @media screen and (max-width: $md) {
+            @include font($font: 'Roboto Slab', $size: 12px);
+            max-width: 250px;
+          }
+          @media screen and (max-width: $sm) {
+            display: none;
+          }
+        }
+        @media screen and (max-width: $sm) {
+          order: 1;
+        }
+      }
+      @media screen and (max-width: $xl) {
+        width: $lg;
+      }
+      @media screen and (max-width: $lg) {
+        width: $md;
+      }
+      @media screen and (max-width: $md) {
+        width: $sm;
+      }
+      @media screen and (max-width: $sm) {
+        width: $xs;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    @media screen and (max-width: $md) {
+      height: 500px;
+    }
+    @media screen and (max-width: $sm) {
+      height: 630px;
+    }
+  }
+  .about-wrapper {
+    height: 550px;
+    @include box-shadow(0, 4px, 21px, 0, $black25);
+    @include flex();
+    .about-us {
+      width: $lg;
+      margin: 0 auto;
+      @include flex(space-between, center);
+      .description {
+        &__heading {
+          position: relative;
+          h1 {
+            margin: 0;
+            @include font($font: 'Roboto Slab', $size: 48px);
+            @media screen and (max-width: $md) {
+              @include font($font: 'Roboto Slab', $size: 35px);
+            }
+            @media screen and (max-width: $sm) {
+              padding-top: 75px;
+            }
+          }
+          p {
+            max-width: 500px;
+            @include font($font: 'Roboto Slab', $size: 14px, $color: $black75);
+            @media screen and (max-width: $md) {
+              @include font($font: 'Roboto Slab', $size: 12px);
+              max-width: 400px;
+            }
+            @media screen and (max-width: $sm) {
+              display: none;
+            }
+          }
+          &:before {
+            @include pseudo-line;
+          }
+          @media screen and (max-width: $sm) {
+            align-self: flex-start;
+          }
+        }
+        &__button {
+          border-radius: 0;
+          border: 3px solid black;
+          @include font($font: 'Roboto', $size: 16px, $weight: bold);
+          @media screen and (max-width: $md) {
+            font-size: 14px;
+          }
+        }
+        &__about-text {
+          @include font($font: 'Roboto Slab', $size: 18px, $color: $black75);
+          max-width: 500px;
+          margin: 20px 0;
+          @media screen and (max-width: $md) {
+            font-size: 12px;
+            max-width: 250px;
+          }
+          @media screen and (max-width: $sm) {
+            max-width: 300px;
+          }
+        }
+        @media screen and (max-width: $sm) {
+          order: 2;
+          @include flex(center, center, column);
+        }
+      }
+      .quote {
+        @include flex(flex-end, center, column);
+        max-width: 300px;
+        height: 80%;
+        &__text {
+          position: relative;
+          @include font($font: 'Roboto Slab', $size: 25px, $color: black);
+          text-align: end;
+          &::before {
+            @include pseudo-quote;
+          }
+          @media screen and (max-width: $md) {
+            font-size: 20px;
+          }
+        }
+        &__title {
+          align-self: flex-end;
+        }
+        @media screen and (max-width: $md) {
+          max-width: 275px;
+        }
+        @media screen and (max-width: $sm) {
+          order: 1;
+          @include flex(center, center, column);
+        }
+      }
+      @media screen and (max-width: $xl) {
+        width: $lg;
+      }
+      @media screen and (max-width: $lg) {
+        width: $md;
+      }
+      @media screen and (max-width: $md) {
+        width: $sm;
+      }
+      @media screen and (max-width: $sm) {
+        width: $xs;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    @media screen and (max-width: $md) {
+      height: 450px;
+    }
+    @media screen and (max-width: $md) {
+      align-items: center;
+    }
+    @media screen and (max-width: $sm) {
+      height: 700px;
     }
   }
 }

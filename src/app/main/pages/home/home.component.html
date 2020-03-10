@@ -1,8 +1,47 @@
 <div class="home-container">
   <div class="author-wrapper">
     <div class="author-of-the-day">
-      <h1>Writer of the day</h1>
-      <p>{{ this.contentService.authorOfTheDay.lastname }}</p>
+      <div class="description">
+        <div class="description__heading">
+          <h1>Writer of the day</h1>
+          <p>{{ this.contentService.authorOfTheDay?.summary }}</p>
+        </div>
+        <button mat-button class="description__button">
+          Learn more<mat-icon>arrow_right_alt</mat-icon>
+        </button>
+      </div>
+      <div class="author">
+        <img class="author__image" src="{{this.contentService.authorOfTheDay?.images.split(',')[0]}}" alt="Author">
+        <h3 class="author__name">
+          <span>{{this.contentService.authorOfTheDay?.firstname}} </span>
+          <span>{{this.contentService.authorOfTheDay?.lastname}}</span>
+        </h3>
+        <p class="author__title">{{this.contentService.authorOfTheDay?.title}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="about-wrapper">
+    <div class="about-us">
+      <div class="description">
+        <div class="description__heading">
+          <p>Who we are?</p>
+          <h1>About Us</h1>
+        </div>
+        <div class="description__about-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus iaculis magna dignissim nunc. Velit scelerisque ut massa diam rutrum. Lacus, in felis praesent sodales sociis feugiat elementum consectetur. In quis nunc et odio nulla mattis est. Id dui, at purus cras felis at. Iaculis ut cum cum venenatis, erat feugiat. Vel enim sit fames turpis odio. Malesuada rhoncus pretium porta at dapibus id.
+        </div>
+        <button mat-raised-button class="description__button" (click)="teamPage()">
+          Meet Our Team
+        </button>
+      </div>
+      <div class="quote">
+        <p class="quote__text">
+          {{'page.home.quote' | translate}}
+        </p>
+        <p class="quote__title">
+          {{'page.home.author' | translate}}
+        </p>
+      </div>
     </div>
   </div>
 </div>

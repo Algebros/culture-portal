@@ -60,8 +60,8 @@
 
 // Custom
 
-@mixin borderInsetHover($spread) {
-  @include box-shadow(0, 0, 0, $spread, black, true);
+@mixin borderInsetHover($spread, $color: black) {
+  @include box-shadow(0, 0, 0, $spread, $color, true);
 }
 
 @mixin underline($color) {
@@ -80,4 +80,28 @@
   @media screen and (max-width: $md) {
     height: calc(100vh - 95px);
   }
+}
+
+// parent block must have position: relative
+
+@mixin pseudo-line($width: 4px) {
+  @include size($width, 100%);
+  @include absolute(top 0 left -75px);
+
+  background: black;
+  content: '';
+
+  @media screen and (max-width: $xl) {
+    visibility: hidden;
+  }
+}
+
+@mixin pseudo-quote {
+  content: '';
+  @include size(30px);
+  position: absolute;
+  left: -15px;
+  top: -20px;
+  background-image: url(./../../../../assets/icons/logo.svg);
+  background-size: cover;
 }

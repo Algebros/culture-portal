@@ -1,3 +1,4 @@
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -45,7 +46,8 @@ import { TranslateModule } from '@ngx-translate/core';
     MatStepperModule,
     MatButtonModule,
     MatTableModule,
-    TranslateModule
+    TranslateModule,
+    MatIconModule
    ],
   providers: [
     VideoModalService

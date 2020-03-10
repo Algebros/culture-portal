@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LanguageService } from './language.service';
 import butterService from 'src/app/core/services/butter-cms.service';
-import QueryParams from '../models/query-params.model';
 import Developer from '../models/developer.model';
 import Author from '../models/author.model';
 
@@ -10,6 +9,7 @@ import Author from '../models/author.model';
 })
 export class ContentService {
 
+  private randomInt: number;
   public developers: Developer[];
   public authors: Author[];
   public authorOfTheDay: Author;
@@ -29,11 +29,16 @@ export class ContentService {
     butterService.content
       .retrieve(['author'], { locale: this.languageService.language })
       .then(response => {
+
         this.authors = this.filterAuthorsById(response.data.data.author);
-        if (!this.authorOfTheDay) {
-          let randomInt: number = this.randomInteger(0, 8);
-          this.authorOfTheDay = this.authors[randomInt];
+
+        if (!this.randomInt) {
+          this.randomInt = this.randomInteger(0, 8);
+          this.authorOfTheDay = this.authors[this.randomInt];
+        } else {
+          this.authorOfTheDay = this.authors[this.randomInt];
         }
+
       })
       .catch(error => console.log(error));
   }

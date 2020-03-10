@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { ContentService } from '../../services/content.service';
@@ -12,7 +13,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription;
 
-  constructor(private languageService: LanguageService, public contentService: ContentService) {
+  constructor(
+    private languageService: LanguageService,
+    public contentService: ContentService,
+    private _router: Router
+  ) {
     this.subscription = this.languageService.changeLanguage.subscribe(() => {
       this.contentService.getAuthors();
     });
@@ -24,6 +29,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  public teamPage(): void {
+    this._router.navigateByUrl(this._router.url + '/team');
   }
 
 }
