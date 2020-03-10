@@ -1,3 +1,4 @@
+import { LanguageService } from './../../../main/services/language.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponent implements OnInit {
 
-  constructor() { }
+  constructor(public languageService: LanguageService) { }
 
   public ngOnInit(): void {
   }

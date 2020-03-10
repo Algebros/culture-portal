@@ -1,3 +1,4 @@
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
@@ -29,6 +30,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatIconModule,
     MatButtonToggleModule,
     TranslateModule,
+    MatCardModule
   ],
   exports: [
     HeaderComponent,
