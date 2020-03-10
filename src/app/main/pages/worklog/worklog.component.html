@@ -2,7 +2,6 @@
 
 <div *ngFor="let developer of worklog">
   <h3>{{developer.name | translate}}</h3>
-
   <table mat-table [dataSource]="developer.works" class="mat-elevation-z8">
     <ng-container matColumnDef="feature">
       <th mat-header-cell *matHeaderCellDef>Feature</th>
