@@ -17,6 +17,7 @@ export const worklog: IWorklog[] = [
       { feature: 'gallery', time: 2},
       { feature: 'content', time: 4},
       { feature: 'translations', time: 2},
+      { feature: 'layout', time: 2.2},
     ]
   }, {
     name: 'page.worklog.developer.sofroniy-miadvedzeu',
