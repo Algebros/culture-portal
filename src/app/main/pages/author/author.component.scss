@@ -1,4 +1,4 @@
-$padding-title: 70px;
+$indent: 70px;
 
 :host {
 
@@ -11,7 +11,7 @@ $padding-title: 70px;
         .personal {
           display: flex;
           flex-direction: column;
-          padding-left: $padding-title;
+          padding-left: $indent;
           border-left: 4px solid #000;
 
           font-family: "Roboto Slab";
@@ -41,7 +41,64 @@ $padding-title: 70px;
           .title {
             display: flex;
             font-family: "Roboto Mono";
-            padding-left: $padding-title;
+
+            &__icon {
+              font-family: "Roboto";
+              font-style: normal;
+              font-weight: bold;
+              font-size: 40px;
+              line-height: 47px;
+              color: #000000;
+            }
+
+            &__text {
+              padding: 0;
+              margin: 0;
+              font-style: italic;
+              font-weight: 300;
+              font-size: 40px;
+              line-height: 47px;
+              color: #000000;
+            }
+          }
+        }
+
+        .works {
+
+          .title {
+            display: flex;
+            font-family: "Roboto Mono";
+
+            &__icon {
+              font-family: "Roboto";
+              font-style: normal;
+              font-weight: bold;
+              font-size: 40px;
+              line-height: 47px;
+              color: #000000;
+            }
+
+            &__text {
+              padding: 0;
+              margin: 0;
+              font-style: italic;
+              font-weight: 300;
+              font-size: 40px;
+              line-height: 47px;
+              color: #000000;
+            }
+          }
+
+          .table {
+            margin-left: $indent;
+          }
+        }
+
+        .places {
+        
+          .title {
+            display: flex;
+            font-family: "Roboto Mono";
 
             &__icon {
               font-family: "Roboto";
