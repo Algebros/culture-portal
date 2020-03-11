@@ -33,27 +33,6 @@
 	background-image: none;
 }
 
-
-@media screen and (min-width: 768px) {
-  .carousel-control .glyphicon-chevron-left,
-  .carousel-control .glyphicon-chevron-right,
-  .carousel-control .icon-next,
-  .carousel-control .icon-prev {
-    top: 10px;
-    line-height: 30px;
-    width: 30px;
-    height: 30px;
-    margin-top: -10px;
-    font-size: 15px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.container {
-		width: auto;
-	}
-}
-
 .carousel-indicators {
 	left: 30%;
 	bottom: -66px;
@@ -85,4 +64,24 @@
 	height: 10px;
 	margin: 0px 10px;
 	background-color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-next,
+  .carousel-control .icon-prev {
+    top: 10px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 15px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: auto;
+	}
 }
