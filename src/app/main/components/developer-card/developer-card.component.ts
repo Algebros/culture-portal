@@ -9,10 +9,15 @@ import Developer from '../../models/developer.model';
 export class DeveloperCardComponent implements OnInit {
 
   @Input() public developer: Developer;
+  public panelOpenState: boolean = false;
 
   constructor() { }
 
   public ngOnInit(): void {
+  }
+
+  public togglePanel(): void {
+    this.panelOpenState = !this.panelOpenState;
   }
 
 }
