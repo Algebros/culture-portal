@@ -1,0 +1,42 @@
+:host {
+
+  .container {
+    display: flex;
+    justify-content: center;
+
+      &__left {
+
+        .personal {
+          display: flex;
+          flex-direction: column;
+          padding-left: 70px;
+          border-left: 4px solid #000;
+
+          font-family: "Roboto Slab";
+
+          &__name {
+            font-size: 48px;
+            line-height: 63px;
+            color: #000;
+          }
+
+          &__subtitle {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 21px;
+            color: rgba(0, 0, 0, 0.7);
+          }
+
+          &__date {
+            font-size: 16px;
+            line-height: 21px;
+            color: rgba(0, 0, 0, 0.7);
+          }
+        }
+      }
+
+    &__right {
+
+    }
+  }
+}
