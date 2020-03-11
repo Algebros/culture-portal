@@ -3,11 +3,11 @@
     <div class="author-of-the-day">
       <div class="description">
         <div class="description__heading">
-          <h1>Writer of the day</h1>
+          <h1>{{ 'page.home.writer-of-day-title' | translate}}</h1>
           <p>{{ this.contentService.authorOfTheDay?.summary }}</p>
         </div>
         <button mat-button class="description__button">
-          Learn more<mat-icon>arrow_right_alt</mat-icon>
+          {{ 'page.home.more-btn' | translate}}<mat-icon>arrow_right_alt</mat-icon>
         </button>
       </div>
       <div class="author">
@@ -24,14 +24,16 @@
     <div class="about-us">
       <div class="description">
         <div class="description__heading">
-          <p>Who we are?</p>
-          <h1>About Us</h1>
+          <p> {{ 'page.home.who-we' | translate}} </p>
+          <h1>
+          {{ 'page.home.about-title' | translate}}
+          </h1>
         </div>
         <div class="description__about-text">
           {{ 'page.home.about' | translate}}
         </div>
         <button mat-raised-button class="description__button" (click)="teamPage()">
-          Meet Our Team
+          {{ 'page.home.meet-team' | translate}}
         </button>
       </div>
       <div class="quote">
