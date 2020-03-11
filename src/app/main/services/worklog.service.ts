@@ -63,4 +63,8 @@ export class WorklogService {
       this.getJobs();
     });
   }
+
+  public clearWorklog(): void {
+    this.worklog = [];
+  }
 }

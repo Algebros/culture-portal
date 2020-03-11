@@ -22,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
+import { TotalTimePipe } from './pipes/total-time.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MatChipsModule } from '@angular/material/chips';
     AuthorsComponent,
     DeveloperCardComponent,
     WorksComponent,
-    YoutubeVideoModalComponent
+    YoutubeVideoModalComponent,
+    TotalTimePipe
   ],
   entryComponents: [
     YoutubeVideoModalComponent

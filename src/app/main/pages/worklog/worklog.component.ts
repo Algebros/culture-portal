@@ -17,12 +17,15 @@ export class WorklogComponent implements OnInit {
   constructor(private worklogService: WorklogService) { }
 
   public ngOnInit(): void {
-    this.worklog$ = this.worklogService.getWorklog$().subscribe((worklog) => {
-      this.worklog = worklog;
-    });
+    if (!this.worklog) {
+      this.worklog$ = this.worklogService.getWorklog$().subscribe((worklog) => {
+        this.worklog = worklog;
+      });
+    }
   }
 
   public ngOnDestroy(): void {
+    this.worklogService.clearWorklog();
     this.worklog$.unsubscribe();
   }
 
