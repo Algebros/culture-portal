@@ -176,6 +176,29 @@ $indent-title: 20px;
           @include flex(center, center, column);
         }
       }
+
+      .youtube-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        align-self: center;
+        width: 313px;
+        // height: 45px;
+        margin-bottom: 50px;
+        line-height: 38px;
+        border: 3px solid rgba(0, 0, 0, 0.5);
+        border-radius: 0px 13px 16px 0px;
+        cursor: pointer;
+        @include font($font: 'Roboto Slab', $size: 18px, $color: black);
+
+        .youtube-icon {
+          position: absolute;
+          right: -3px;
+        }
+      }
     }
   }
 }
