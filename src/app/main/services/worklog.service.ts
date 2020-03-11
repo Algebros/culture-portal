@@ -1,3 +1,4 @@
+import { SheetsResponse, RangeResponse } from './../models/google-sheets.model';
 import { HttpClient } from '@angular/common/http';
 import { IWorklog } from './../models/worklog.model';
 import { worklog } from './../../../assets/worklog/worklog';
@@ -18,20 +19,18 @@ export class WorklogService {
   private worklog$: BehaviorSubject<IWorklog[]> = new BehaviorSubject<IWorklog[]>([]);
 
   constructor(private httpClient: HttpClient) {
-    this.getWorklog2();
+
   }
 
-  public getWorklog(): IWorklog[] {
-    return worklog;
-  }
   public getWorklog$(): Observable<IWorklog[]> {
+    this.getWorklog();
     return this.worklog$;
   }
 
   public getJobs(): void {
     // tslint:disable-next-line: no-any
     const getData: any = (param) => {
-      return this.httpClient.get(`${this.url}/values/'${param}'!A2:B7?key=${this.key}`, {
+      return this.httpClient.get(`${this.url}/values/'${param}'!A2:B100?key=${this.key}`, {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -40,23 +39,23 @@ export class WorklogService {
 
     from(this.developers).pipe(
       mergeMap(param => getData(param))
-    // tslint:disable-next-line: no-any
-    ).subscribe((val: any) => {
-      const log: IWorklog = {name: '', works: []};
-      log.name = val.range.split('!')[0].replace(/\'/g, '');
-      val.values.forEach((job) => log.works.push({feature: job[0], time: job[1]}));
+    ).subscribe((workList: RangeResponse) => {
+      const log: IWorklog = { name: '', works: [] };
+      log.name = workList.range.split('!')[0].replace(/\'/g, '');
+      if (workList.values) {
+        workList.values.forEach((job) => log.works.push({ feature: job[0], time: Number(job[1]) }));
+      }
       this.worklog.push(log);
       this.worklog$.next(this.worklog);
     });
   }
 
-  public getWorklog2(): void {
+  public getWorklog(): void {
     this.httpClient.get(`${this.url}?key=${this.key}`, {
       headers: {
         'Content-Type': 'application/json'
       },
-      // tslint:disable-next-line: no-any
-    }).subscribe((res: any) => {
+    }).subscribe((res: SheetsResponse) => {
       this.developers = res.sheets.map((sheet) => sheet.properties.title);
       this.getJobs();
     });
