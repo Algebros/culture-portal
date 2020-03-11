@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
-import Author from '../../models/author.model';
+import {Component, OnInit} from '@angular/core';
 import {VideoModalService} from '../../services/video-modal.service';
+import {ActivatedRoute, Params} from '@angular/router';
+import {ContentService} from '../../services/content.service';
+import Author from '../../models/author.model';
 
 interface PeriodicElement {
   title: string;
@@ -9,7 +11,7 @@ interface PeriodicElement {
 @Component({
   selector: 'app-author',
   templateUrl: './author.component.html',
-  styleUrls: ['./author.component.scss']
+  styleUrls: ['./author.component.scss'],
 })
 export class AuthorComponent {
 
