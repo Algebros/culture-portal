@@ -43,7 +43,10 @@ export class WorklogService {
       const log: IWorklog = { name: '', works: [] };
       log.name = workList.range.split('!')[0].replace(/\'/g, '');
       if (workList.values) {
-        workList.values.forEach((job) => log.works.push({ feature: job[0], time: Number(job[1]) }));
+        workList.values.forEach((job) => {
+          const time: number = Number.isNaN( +job[1] ) ? 0 : Number(job[1]);
+          log.works.push({ feature: job[0], time: time });
+        });
       }
       this.worklog.push(log);
       this.worklog$.next(this.worklog);

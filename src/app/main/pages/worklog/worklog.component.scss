@@ -1,19 +1,58 @@
-:host {
-  margin: 20px;
+@import 'index';
+
+.wrapper {
+  background: $bg-grey;
+  padding-bottom: 20px;
 }
 
-
-
 h3, h2 {
+  @include font($font: 'Roboto Slab');
+  margin-top: 0;
   text-align: center;
   padding: 20px;
 }
 
+h2 {
+  @media screen and (min-width: $xs) {
+    @include font(32px);
+  }
+
+  @media screen and (min-width: $sm) {
+    @include font(36px);
+  }
+
+  @media screen and (min-width: $md) {
+    @include font(40px);
+  }
+
+  @media screen and (min-width: $lg) {
+    @include font(44px);
+  }
+
+  @media screen and (min-width: $xl) {
+    @include font(48px);
+  }
+}
+
+.worklog {
+  margin-top: 20px;
+}
+
 table {
-  min-width: 50%;
+  min-width: 80%;
+  max-width: 95%;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 tr:nth-child(even) {
-  background-color: #C9E4F6;
+  background-color: rgb(234, 244, 250);
+}
+
+td:nth-child(even), th:nth-child(even) {
+  text-align: center;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
 }
