@@ -13,7 +13,11 @@ export const worklog: IWorklog[] = [
     works: []
   }, {
     name: 'page.worklog.developer.katsiaryna-zhdanovich',
-    works: []
+    works: [
+      { feature: 'gallery', time: 2},
+      { feature: 'content', time: 4},
+      { feature: 'translations', time: 2},
+    ]
   }, {
     name: 'page.worklog.developer.sofroniy-miadvedzeu',
     works: []
