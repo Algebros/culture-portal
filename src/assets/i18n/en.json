@@ -1,6 +1,7 @@
 {
   "header": {
     "nav": {
+      "title": "The Culture Portal",
       "home": "HOME",
       "writers": "WRITERS",
       "team": "TEAM",
@@ -13,13 +14,20 @@
   },
   "page": {
     "home": {
-
+      "quote": "The greatest glory of the people is its writers",
+      "author": "Benjamin Jonson"
     },
     "authors": {
 
     },
     "author": {
-
+      "timeline": {
+        "next-btn": "Next"
+      },
+      "works": {
+        "year": "Year",
+        "title": "Title"
+      }
     },
     "team": {
       "header": "Meet our team"
@@ -33,10 +41,11 @@
         "sofroniy-miadvedzeu": "Sofroniy Miadvedzeu",
         "yauhen-pachankou": "Yauhen Kalanitski",
         "yauhen-kalanitski": "Yauhen Pachankou"
+      }
     },
     "error": {
-      "error-text": "404 - PAGE NOT FOUND",
-      "home": "Go to Homepage"
+      "description": "OOPS! NOTHING WAS FOUND",
+      "details": "The page you are looking for might have been removed had its name changed or is temporarily unavailable."
     }
   }
 }
