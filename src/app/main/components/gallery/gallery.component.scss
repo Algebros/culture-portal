@@ -1,7 +1,5 @@
 @import "index";
 
-$main-color: rgba(0,0,0,0);
-
 .sliderAuthors {
 	width: 350px;
 	height: 512px;
@@ -13,8 +11,8 @@ $main-color: rgba(0,0,0,0);
 	top: 543px;
 	width: 27%;
 	font-size: 20px;
-	color: $main-color;
-	background-color: $main-color;
+	color: #000000;
+	background-color: #000000;
 	filter: 0;
 	opacity: 1;
 	text-shadow: 0 1px 1px rgba(0,0,0,1);
@@ -50,6 +48,12 @@ $main-color: rgba(0,0,0,0);
 	}
 }
 
+@media (min-width: 1200px) {
+	.container {
+		width: auto;
+	}
+}
+
 .carousel-indicators {
 	left: 30%;
 	bottom: -66px;
@@ -80,5 +84,5 @@ $main-color: rgba(0,0,0,0);
 	width: 10px;
 	height: 10px;
 	margin: 0px 10px;
-	background-color: $main-color;
+	background-color: #000000;
 }
