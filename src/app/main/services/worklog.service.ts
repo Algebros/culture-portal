@@ -1,7 +1,6 @@
 import { SheetsResponse, RangeResponse } from './../models/google-sheets.model';
 import { HttpClient } from '@angular/common/http';
 import { IWorklog } from './../models/worklog.model';
-import { worklog } from './../../../assets/worklog/worklog';
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, of, from } from 'rxjs';
 import { mergeMap, delay } from 'rxjs/operators';
