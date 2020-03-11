@@ -10,9 +10,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'en' },
   { path: ':language', component: HomeComponent },
   { path: ':language/authors', component: AuthorsComponent },
-  // CHANGED
-  // { path: ':language/author/:id', component: AuthorComponent },
-  { path: ':language/author', component: AuthorComponent },
+  { path: ':language/author/:id', component: AuthorComponent },
   { path: ':language/team', component: TeamComponent },
   { path: ':language/worklog', component: WorklogComponent }
 ];

@@ -2,11 +2,11 @@
   <div class="container__left">
   
     <div class="personal">
-      <h2 class="personal__name">Name Surname</h2>
-      <span class="personal__subtitle">Tiltle: lorem ipsum dolor sit amet</span>
+      <h2 class="personal__name">{{ author.firstname | translate }} {{ author.lastname }}</h2>
+      <span class="personal__subtitle">{{ author.title }}</span>
       <div class="personal__date">
-        <time class="born" datetime="01.01.2000">01.01.2000</time> -
-        <time class="die" datetime="01.01.2020">01.01.2020</time>
+        <time class="born">{{ author.born | date }}</time>
+        <time class="die" *ngIf="author.died"> - {{ author.died | date }}</time>
       </div>
     </div>
 
@@ -15,7 +15,7 @@
         <span class="title__icon">#</span>
         <h3 class="title__text">Biography</h3>
       </div>
-      <app-timeline></app-timeline>
+      <app-timeline [biography]="author.timeline"></app-timeline>
     </div>
 
     <div class="works">
@@ -24,18 +24,18 @@
         <h3 class="title__text">Works</h3>
       </div>
 
-      <table mat-table [dataSource]="dataSource" class="table mat-elevation-z8">
+      <table mat-table [dataSource]="author.works" class="table mat-elevation-z8">
 
         <!-- year -->
-        <ng-container matColumnDef="year">
-          <th mat-header-cell *matHeaderCellDef>Year</th>
-          <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Date</th>
+          <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
         </ng-container>
 
         <!-- title -->
-        <ng-container matColumnDef="title">
+        <ng-container matColumnDef="description">
           <th mat-header-cell *matHeaderCellDef>Title</th>
-          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
         </ng-container>
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -50,7 +50,7 @@
       </div>
 
       <div class="map">
-        <app-map></app-map>
+        <app-map [incomeLocations]="author.locations"></app-map>
       </div>
     </div>
   
@@ -60,7 +60,7 @@
     <app-gallery></app-gallery>
     <div class="quote">
       <p class="quote__text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit duis ornare nam dui. Feugiat hac eget lacus sed ornare eu. Volutpat mauris.
+        {{author.quote}}
       </p>
     </div>
     <button class="youtube-btn" (click)="videoModalService.openModal(author.youtube)">Watch video
