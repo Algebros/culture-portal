@@ -40,6 +40,9 @@
     },
     "worklog": {
       "header": "Worklog",
+      "feature": "Feature",
+      "spent": "Time spent (hours)",
+      "total": "Total:",
       "developer": {
         "anhelina-lakhtanava": "Anhelina Lakhtanava",
         "denis-paragas": "Denis Parágas",

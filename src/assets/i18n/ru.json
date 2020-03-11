@@ -40,6 +40,9 @@
     },
     "worklog": {
       "header": "Журнал",
+      "feature": "Функционал",
+      "spent": "Потрачено времени (в часах)",
+      "total": "Итого:",
       "developer": {
         "anhelina-lakhtanava": "Ангелина Лахтанова",
         "denis-paragas": "Денис Парáгас",
