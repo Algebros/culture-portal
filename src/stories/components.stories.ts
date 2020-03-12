@@ -12,6 +12,8 @@ import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 export default {
   title: 'Components',
@@ -19,7 +21,8 @@ export default {
     HeaderComponent,
     MobileMenuComponent,
     FooterComponent,
-    GalleryComponent
+    GalleryComponent,
+    TimelineComponent
   ],
   decorators: [
     moduleMetadata({
@@ -32,6 +35,7 @@ export default {
         MatDividerModule,
         MatIconModule,
         MatButtonToggleModule,
+        MatStepperModule,
         BrowserAnimationsModule
       ],
       providers: [
@@ -72,6 +76,15 @@ export const gallery = () => ({
 
 gallery.story = {
   name: 'Gallery',
+};
+
+export const timeline = () => ({
+  component: TimelineComponent,
+  props: {}
+});
+
+timeline.story = {
+  name: 'Timeline',
 };
 
 // export const headerMobile: {

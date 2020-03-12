@@ -32,9 +32,9 @@
         padding-bottom: 0;
       }
 
-      @media screen and (min-width: $md) and (max-width: $lg) {
-        display: none;
-      }
+      // @media screen and (min-width: $md) and (max-width: $lg) {
+      //   display: none;
+      // }
 
       @media screen and (min-width: $lg) {
         @include size(45px);
@@ -55,9 +55,9 @@
           padding-bottom: 5px;
         }
 
-        @media screen and (min-width: $md) and (max-width: $lg) {
-          display: none;
-        }
+        // @media screen and (min-width: $md) and (max-width: $lg) {
+        //   display: none;
+        // }
       }
     }
 
@@ -104,9 +104,9 @@
         }
       }
 
-      @media screen and (max-width: $md) {
-        display: none;
-      }
+      // @media screen and (max-width: $md) {
+      //   display: none;
+      // }
     }
 
     .mobile-menu {
@@ -114,9 +114,9 @@
         display: block;
       }
 
-      @media screen and (min-width: $md) {
-        display: none;
-      }
+      // @media screen and (min-width: $md) {
+      //   display: none;
+      // }
     }
   }
 

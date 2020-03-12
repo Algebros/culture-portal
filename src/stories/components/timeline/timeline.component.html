@@ -1,0 +1,7 @@
+<mat-vertical-stepper>
+  <mat-step *ngFor="let activity of biography, let i = index">
+    <ng-template matStepLabel>{{ activity.date }}</ng-template>
+    <div class="content">{{ activity.content }}</div>
+    <button mat-button matStepperNext *ngIf="i !== biography.length - 1">asd</button>
+  </mat-step>
+</mat-vertical-stepper>
