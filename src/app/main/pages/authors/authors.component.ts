@@ -15,13 +15,18 @@ export class AuthorsComponent implements OnInit {
 
   public sortingCriteria: string = 'name';
 
-  constructor(private languageService: LanguageService, public contentService: ContentService) {
-    this.subscription = this.languageService.changeLanguage.subscribe(() => {
-      this.contentService.getAuthors();
-    });
-  }
+  constructor(
+    private languageService: LanguageService,
+    public contentService: ContentService
+  ) {}
 
   public ngOnInit(): void {
+    this.subscription = this.languageService.changeLanguage.subscribe(() => {
+      this.contentService.getAuthors();
+
+      console.log(1);
+    });
+
     this.contentService.getAuthors();
   }
 

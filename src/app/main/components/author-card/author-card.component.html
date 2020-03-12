@@ -5,6 +5,6 @@
     <p>{{author.title}}</p>
   </mat-card-content>
   <mat-card-actions class="author__btn-block">
-    <button class="author__btn" mat-button>more</button>
+    <button class="author__btn" mat-button [routerLink]="['/home', languageService.language, 'author', author.id]">more</button>
   </mat-card-actions>
 </mat-card>

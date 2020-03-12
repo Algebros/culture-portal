@@ -15,15 +15,6 @@ export class ContentService {
 
   constructor(private languageService: LanguageService) {}
 
-  public getAuthors(): void {
-    butterService.content
-      .retrieve(['author'], { locale: this.languageService.language })
-      .then(authors => {
-        this.authors = authors.data.data.author.filter(author => author.firstname);
-      })
-      .catch(error => console.error(error));
-  }
-
   public getDevelopers(): void {
     butterService.content
       .retrieve(['developer'], { locale: this.languageService.language })
@@ -31,8 +22,15 @@ export class ContentService {
       .catch(error => console.error(error));
   }
 
-  public filterAuthorsById(data: { data: { data: { author: Author[]}}}): Author[] {
-    return data.data.data.author.filter(item => item.id);
+  public getAuthors(): Promise<Author[]> {
+    return butterService.content
+      .retrieve(['author'], { locale: this.languageService.language })
+      .then(authors => this.authors = authors.data.data.author.filter(author => author.firstname))
+      .catch(error => console.error(error));
+  }
+
+  public getAuthorById(id: string): Author {
+     return this.authors.find(author => author.id === +id);
   }
 
 }
