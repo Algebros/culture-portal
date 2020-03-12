@@ -1,0 +1,44 @@
+<button class="menu-btn" mat-icon-button  [matMenuTriggerFor]="beforeMenu">
+  <mat-icon>menu</mat-icon>
+</button>
+
+<mat-menu class="menu" #beforeMenu="matMenu">
+  <button class="menu__item" mat-menu-item>
+    <mat-icon>home</mat-icon>Home
+  </button>
+
+  <mat-divider></mat-divider>
+
+  <button class="menu__item" mat-menu-item>
+    <mat-icon>library_books</mat-icon>WRITERS
+  </button>
+
+  <mat-divider></mat-divider>
+
+  <button class="menu__item" mat-menu-item>
+    <mat-icon>people_alt</mat-icon>TEAM
+  </button>
+
+  <mat-divider></mat-divider>
+
+  <a class="menu__item" mat-menu-item>
+    <mat-icon>assignment</mat-icon>STYLEGUIDE
+  </a>
+
+  <mat-divider></mat-divider>
+
+  <button class="menu__item" mat-menu-item>
+    <mat-icon>assignment</mat-icon>WORKLOG
+  </button>
+
+  <mat-divider></mat-divider>
+
+  <mat-icon class="lang-icon">language</mat-icon>
+
+  <mat-button-toggle-group class="group-btn" name="langSettings" aria-label="Language Settings" (click)="clickHandler($event)">
+    <mat-button-toggle class="group-btn__item">EN</mat-button-toggle>
+    <mat-button-toggle class="group-btn__item">RU</mat-button-toggle>
+    <mat-button-toggle class="group-btn__item">BE</mat-button-toggle>
+  </mat-button-toggle-group>
+
+</mat-menu>

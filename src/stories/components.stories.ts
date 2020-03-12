@@ -1,5 +1,6 @@
 import { HeaderComponent } from './components/header/header.component';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
@@ -7,37 +8,63 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { moduleMetadata } from '@storybook/angular';
 import { CoreRoutingModule } from 'src/app/core/core-routing.module';
+import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export default {
   title: 'Components',
   component: [
     HeaderComponent,
+    MobileMenuComponent
   ],
   decorators: [
-        moduleMetadata({
-            imports: [
-              CommonModule,
-              CoreRoutingModule,
-              MatButtonModule,
-              MatMenuModule,
-              MatDividerModule,
-              MatIconModule,
-              MatButtonToggleModule
-            ],
-            providers: [
-            ]
-        })
-      ]
+    moduleMetadata({
+      imports: [
+        CommonModule,
+        CoreRoutingModule,
+        MatCardModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatDividerModule,
+        MatIconModule,
+        MatButtonToggleModule,
+        BrowserAnimationsModule
+      ],
+      providers: [
+      ],
+      declarations: [HeaderComponent, MobileMenuComponent],
+    })
+  ]
 };
 
-export const Header = () => ({
-  component: HeaderComponent,
-  props: {},
+export const header = () => ({
+  template: `
+  <app-header></app-header>
+  <app-mobile-menu></app-mobile-menu> Mobile menu
+  `,
+  props: {}
 });
 
-Header.story = {
+header.story = {
   name: 'Header',
 };
+
+// export const headerMobile: {
+//   (): {
+//       component: any;
+//       props: {};
+//   };
+//   story: {
+//       name: string;
+//   };
+// } = () => ({
+//   component: MobileMenuComponent,
+//   props: {},
+// });
+
+// headerMobile.story = {
+//   name: 'FooterComponent',
+// };
 
 // import { HeaderComponent } from 'src/app/core/components/header/header.component';
 // import { CoreRoutingModule } from 'src/app/core/core-routing.module';
