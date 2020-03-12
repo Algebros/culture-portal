@@ -2,18 +2,18 @@
   <div class="authors-page__search search">
     <mat-form-field class="search__input">
       <mat-label>{{'page.authors.placeholder' | translate}}</mat-label>
-      <input matInput type="text" [(ngModel)]="inputValue">
+      <input matInput type="text" [(ngModel)]="searchValue">
     </mat-form-field>
     <div class="search__criteria-block">
       <p class="">{{'page.authors.criteria' | translate}}</p>
       <button class="search__criteria" [class.search__criteria--active]="sortingCriteria==='name'" (click)="sortingCriteria='name'">{{'page.authors.name' | translate}}</button>
-      <button class="search__criteria" [class.search__criteria--active]="sortingCriteria==='place'" (click)="sortingCriteria='place'">{{'page.authors.place' | translate}}</button>
+      <button class="search__criteria" [class.search__criteria--active]="sortingCriteria==='works'" (click)="sortingCriteria='works'">{{'page.authors.works' | translate}}</button>
     </div>
   </div>
 
   <h2 class="authors-page__title">{{'page.authors.header' | translate}}</h2>
 
   <div class="authors authors-page__authors">
-    <app-author-card class="authors__card" *ngFor="let author of contentService.authors" [author]="author"></app-author-card>
+    <app-author-card class="authors__card" *ngFor="let author of contentService.authors | searchAuthor:sortingCriteria:searchValue" [author]="author"></app-author-card>
   </div>
 </div>

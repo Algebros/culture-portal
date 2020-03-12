@@ -23,6 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
+import { SearchAuthorPipe } from './pipes/search-author.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatCardModule} from '@angular/material/card';
     AuthorsComponent,
     DeveloperCardComponent,
     WorksComponent,
-    YoutubeVideoModalComponent
+    YoutubeVideoModalComponent,
+    SearchAuthorPipe
   ],
   entryComponents: [
     YoutubeVideoModalComponent

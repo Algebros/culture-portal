@@ -11,7 +11,7 @@ import {ContentService} from '../../services/content.service';
 export class AuthorsComponent implements OnInit {
   private subscription: Subscription;
 
-  public inputValue: string;
+  public searchValue: string = '';
 
   public sortingCriteria: string = 'name';
 
@@ -23,8 +23,6 @@ export class AuthorsComponent implements OnInit {
   public ngOnInit(): void {
     this.subscription = this.languageService.changeLanguage.subscribe(() => {
       this.contentService.getAuthors();
-
-      console.log(1);
     });
 
     this.contentService.getAuthors();
