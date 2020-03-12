@@ -1,0 +1,46 @@
+{
+  "developer": [
+    {
+      "name": "Anhelina Lakhtanava",
+      "avatar": "https://avatars.githubusercontent.com/linobanana",
+      "github": "https://github.com/linobanana",
+      "contribution": "1, 2, 3",
+      "id": 1.0
+    },
+    {
+      "name": "Denis Parágas",
+      "avatar": "https://avatars.githubusercontent.com/epic-cat-one",
+      "github": "https://github.com/epic-cat-one",
+      "contribution": "1, 2, 3",
+      "id": 2.0
+    },
+    {
+      "name": "Katsiaryna Zhdanovich",
+      "avatar": "https://avatars.githubusercontent.com/KatharinaZh",
+      "github": "https://github.com/KatharinaZh",
+      "contribution": "1, 2, 3",
+      "id": 3.0
+    },
+    {
+      "name": "Sofroniy Miadvedzeu",
+      "avatar": "https://avatars.githubusercontent.com/Algebros",
+      "github": "https://github.com/Algebros",
+      "contribution": "1, 2, 3",
+      "id": 4.0
+    },
+    {
+      "name": "Yauhen Kalanitski",
+      "avatar": "https://avatars.githubusercontent.com/DrD1esel",
+      "github": "https://github.com/DrD1esel",
+      "contribution": "1, 2, 3",
+      "id": 5.0
+    },
+    {
+      "name": "Yauhen Pachankou",
+      "avatar": "https://avatars.githubusercontent.com/EugenePochenkov",
+      "github": "https://github.com/EugenePochenkov",
+      "contribution": "1, 2, 3",
+      "id": 6.0
+    }
+  ]
+}

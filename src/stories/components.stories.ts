@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { MatStepperModule } from '@angular/material/stepper';
+import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
 
 export default {
   title: 'Components',
@@ -66,7 +67,7 @@ export const footer = () => ({
 });
 
 footer.story = {
-  name: 'footer',
+  name: 'Footer',
 };
 
 export const gallery = () => ({
@@ -85,6 +86,15 @@ export const timeline = () => ({
 
 timeline.story = {
   name: 'Timeline',
+};
+
+export const devCard = () => ({
+  component: DeveloperCardComponent,
+  props: {}
+});
+
+devCard.story = {
+  name: 'DevCard',
 };
 
 // export const headerMobile: {

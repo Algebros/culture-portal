@@ -1,0 +1,9 @@
+<div class="team-card" *ngFor="let item of developer">
+  <img class="team-card__image" src="{{item.avatar}}" alt="avatar">
+  <span class="team-card__name">{{item.name}}</span>
+  <span class="team-card__contribution">{{item.contribution}}</span>
+  <div class="team-card__inner">
+    <img class="team-card__icon" src="../../../../assets/icons/github.svg" alt="github icon">
+    <a class="team-card__github" href="{{item.github}}">{{item.github.replace('https://', '')}}</a>
+  </div>
+</div>

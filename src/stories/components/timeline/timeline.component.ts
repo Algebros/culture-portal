@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import Activity from 'src/app/main/models/activity.model';
-const config = require("./moks.json");
+const mocks = require("./mocks.json");
 
 @Component({
   selector: 'app-timeline',
@@ -8,14 +8,10 @@ const config = require("./moks.json");
   styleUrls: ['./timeline.component.scss']
 })
 export class TimelineComponent {
-  public biography: Activity[] = config.activity;
+  public biography: Activity[] = mocks.activity;
 
   public isLinear: boolean = false;
 
   constructor() {}
-
-  public ngOnInit(): void {
-    console.log(config.activity);
-  }
 
 }
