@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="wrapper">
+    <div class="logo__outer">
+      <img class="logo" src="../../../assets/icons/logo.svg" alt="Logo">
+      <span class="logo__title">The Culture Portal</span>
+    </div>
+    <!-- <app-mobile-menu class="mobile-menu"></app-mobile-menu> -->
+    <nav class="nav">
+      <ul class="menu">
+        <li class="menu__item"><a>HOME</a></li>
+        <li class="menu__item"><a>WRITERS</a></li>
+        <li class="menu__item"><a>TEAM</a></li>
+        <li class="menu__item"><a>STYLEGUIDE</a></li>
+        <li class="menu__item"><a>WORKLOG</a></li>
+      </ul>
+      <button class="lang-btn" mat-icon-button [matMenuTriggerFor]="beforeMenu">
+        <mat-icon>language</mat-icon>
+      </button>
+      <mat-menu class="lang-menu" #beforeMenu="matMenu" xPosition="before">
+        <button class="lang-menu__item" mat-menu-item data-language="en" (click)="clickHandler($event)">EN</button>
+        <button class="lang-menu__item" mat-menu-item data-language="ru" (click)="clickHandler($event)">RU</button>
+        <button class="lang-menu__item" mat-menu-item data-language="be" (click)="clickHandler($event)">BE</button>
+      </mat-menu>
+    </nav>
+  </div>
+</header>
