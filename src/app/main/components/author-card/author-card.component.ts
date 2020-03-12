@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import Author from '../../models/author.model';
+import {LanguageService} from '../../services/language.service';
 
 @Component({
   selector: 'app-author-card',
   templateUrl: './author-card.component.html',
   styleUrls: ['./author-card.component.scss']
 })
-export class AuthorCardComponent implements OnInit {
+export class AuthorCardComponent {
+  @Input() public author: Author;
 
-  constructor() { }
-
-  public ngOnInit(): void {
-  }
-
+  constructor(public languageService: LanguageService) {}
 }

@@ -1,1 +1,10 @@
-<p>author-card works!</p>
+<mat-card class="author">
+  <img class="author__photo" mat-card-image [src]="author.images.split(',')[0]" alt="author's photo">
+  <mat-card-content>
+    <mat-card-title>{{author.firstname + ' ' + author.lastname}}</mat-card-title>
+    <p>{{author.title}}</p>
+  </mat-card-content>
+  <mat-card-actions class="author__btn-block">
+    <button class="author__btn" mat-button [routerLink]="['/home', languageService.language, 'author', author.id]">more</button>
+  </mat-card-actions>
+</mat-card>

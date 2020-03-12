@@ -24,7 +24,11 @@
       "more-btn": "Learn more"
     },
     "authors": {
-
+      "header": "Writers",
+      "placeholder": "Search",
+      "criteria": "search by:",
+      "name": "name",
+      "works": "works"
     },
     "author": {
       "timeline": {

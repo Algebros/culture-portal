@@ -24,7 +24,11 @@
       "more-btn": "Даведацца больш"
     },
     "authors": {
-
+      "header": "Пісьменнікі",
+      "placeholder": "Пошук",
+      "criteria": "шукаць па:",
+      "name": "імені",
+      "works": "твору"
     },
     "author": {
       "timeline": {

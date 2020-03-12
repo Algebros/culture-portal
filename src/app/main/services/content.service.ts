@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { LanguageService } from './language.service';
+import {Injectable} from '@angular/core';
+import {LanguageService} from './language.service';
 import butterService from 'src/app/core/services/butter-cms.service';
 import Developer from '../models/developer.model';
 import Author from '../models/author.model';
@@ -14,8 +14,8 @@ export class ContentService {
   public authors: Author[];
   public authorOfTheDay: Author;
 
-  constructor(private languageService: LanguageService) { }
-
+  constructor(private languageService: LanguageService) {}
+  
   private randomInteger(min: number, max: number): number {
     let rand: number = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
@@ -48,6 +48,11 @@ export class ContentService {
       .retrieve(['developer'], { locale: this.languageService.language })
       .then(response => this.developers = response.data.data.developer)
       .catch(error => console.error(error));
+  }
+
+
+  public getAuthorById(id: string): Author {
+     return this.authors.find(author => author.id === +id);
   }
 
 }

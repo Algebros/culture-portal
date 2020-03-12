@@ -1,0 +1,27 @@
+@import 'index';
+
+.author {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  background-color: $bg-green;
+}
+
+.author__photo {
+  height: 300px;
+}
+
+.author__btn-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.author__btn {
+  &:focus {
+    outline: none;
+  }
+}

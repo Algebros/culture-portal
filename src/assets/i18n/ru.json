@@ -24,7 +24,11 @@
       "more-btn": "Узнать больше"
     },
     "authors": {
-
+      "header": "Писатели",
+      "placeholder": "Поиск",
+      "criteria": "искать по:",
+      "name": "имени",
+      "works": "произведению"
     },
     "author": {
       "timeline": {
