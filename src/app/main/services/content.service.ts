@@ -15,7 +15,7 @@ export class ContentService {
   public authorOfTheDay: Author;
 
   constructor(private languageService: LanguageService) {}
-  
+
   private randomInteger(min: number, max: number): number {
     let rand: number = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
@@ -25,8 +25,8 @@ export class ContentService {
     return data.filter(item => item.id);
   }
 
-  public getAuthors(): void  {
-    butterService.content
+  public getAuthors(): Promise<Author>  {
+    return butterService.content
       .retrieve(['author'], { locale: this.languageService.language })
       .then(response => {
 
@@ -39,6 +39,7 @@ export class ContentService {
           this.authorOfTheDay = this.authors[this.randomInt];
         }
 
+        return this.authors;
       })
       .catch(error => console.log(error));
   }
@@ -49,7 +50,6 @@ export class ContentService {
       .then(response => this.developers = response.data.data.developer)
       .catch(error => console.error(error));
   }
-
 
   public getAuthorById(id: string): Author {
      return this.authors.find(author => author.id === +id);
