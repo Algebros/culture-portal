@@ -11,13 +11,15 @@ import { CoreRoutingModule } from 'src/app/core/core-routing.module';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 export default {
   title: 'Components',
   component: [
     HeaderComponent,
     MobileMenuComponent,
-    FooterComponent
+    FooterComponent,
+    GalleryComponent
   ],
   decorators: [
     moduleMetadata({
@@ -61,6 +63,15 @@ export const footer = () => ({
 
 footer.story = {
   name: 'footer',
+};
+
+export const gallery = () => ({
+  component: GalleryComponent,
+  props: {}
+});
+
+gallery.story = {
+  name: 'Gallery',
 };
 
 // export const headerMobile: {
