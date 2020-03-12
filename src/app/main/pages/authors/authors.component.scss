@@ -1,0 +1,120 @@
+@import 'index';
+
+.authors-page {
+  @include size(100%, auto);
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #FDFFF7;
+}
+
+.authors-page__search {
+  align-self: center;
+
+  margin-bottom: 40px;
+}
+
+.authors-page__title {
+  @include size(80%, auto);
+  @include font(32px);
+
+  margin-bottom: 35px;
+
+  align-self: center;
+
+  text-align: center;
+
+  @media screen and (min-width: $sm) {
+    @include font(36px);
+
+    text-align: left;
+  }
+
+  @media screen and (min-width: $md) {
+    @include font(40px);
+  }
+
+  @media screen and (min-width: $lg) {
+    @include font(44px);
+  }
+
+  @media screen and (min-width: $xl) {
+    @include font(48px);
+  }
+}
+
+.authors-page__authors {
+  align-self: center;
+}
+
+.authors__card {
+  width: 100%;
+  max-width: 600px;
+
+  @media screen and (min-width: $sm) {
+    width: 40%;
+  }
+
+  @media screen and (min-width: $md) {
+    width: 30%;
+  }
+}
+
+.search {
+  @include size(80%, auto);
+
+  max-width: $xs;
+}
+
+.search__input {
+  @include size(100%, auto);
+
+  display: block;
+  padding-top: 20px;
+}
+
+.search__criteria-block {
+  @include font($size: 14px, $color: $black75, $weight: 400, $line: 1.2);
+
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  max-width: $xs;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  p {
+    margin: 0;
+
+    font-weight: bold;
+  }
+}
+
+.search__criteria {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  text-decoration: underline;
+
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--active {
+    color: tomato;
+  }
+}
+
+.authors {
+  @include size(80%, auto);
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

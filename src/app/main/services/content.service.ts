@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
-import { LanguageService } from './language.service';
+import {Injectable} from '@angular/core';
+import {LanguageService} from './language.service';
 import butterService from 'src/app/core/services/butter-cms.service';
-import QueryParams from '../models/query-params.model';
 import Developer from '../models/developer.model';
 import Author from '../models/author.model';
 
@@ -12,12 +11,17 @@ export class ContentService {
 
   public developers: Developer[];
 
-  constructor(private languageService: LanguageService) { }
+  public authors: Author[];
 
-  public async getAuthors(params: QueryParams = { locale: 'en' }): Promise<{}>  {
-    let response: {} = butterService.content.retrieve(['author'], params);
-    let data: {} = await response;
-    return data;
+  constructor(private languageService: LanguageService) {}
+
+  public getAuthors(): void {
+    butterService.content
+      .retrieve(['author'], { locale: this.languageService.language })
+      .then(authors => {
+        this.authors = authors.data.data.author.filter(author => author.firstname);
+      })
+      .catch(error => console.error(error));
   }
 
   public getDevelopers(): void {

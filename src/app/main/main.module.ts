@@ -19,6 +19,10 @@ import { VideoModalService } from './services/video-modal.service';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -45,8 +49,12 @@ import { TranslateModule } from '@ngx-translate/core';
     MatStepperModule,
     MatButtonModule,
     MatTableModule,
-    TranslateModule
-   ],
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    TranslateModule,
+    FormsModule
+  ],
   providers: [
     VideoModalService
   ]

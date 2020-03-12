@@ -16,7 +16,11 @@
 
     },
     "authors": {
-
+      "header": "Писатели",
+      "placeholder": "Поиск",
+      "criteria": "искать по:",
+      "name": "имени",
+      "place": "месту рождения"
     },
     "author": {
 

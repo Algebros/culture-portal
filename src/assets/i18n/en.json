@@ -16,7 +16,11 @@
 
     },
     "authors": {
-
+      "header": "Writers",
+      "placeholder": "Search",
+      "criteria": "search by:",
+      "name": "name",
+      "place": "place of birth"
     },
     "author": {
 
