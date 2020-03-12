@@ -1,0 +1,37 @@
+@import "index";
+
+.footer {
+  @include size(100%, 80px);
+  @include flex(center, center);
+  @include font(20px, white);
+  @include box-shadow(0, -6px, 12px, 0, lighten($bg-purple, 60%));
+
+  background-color: $bg-purple;
+
+  .inscription {
+    @include flex(center, center);
+
+    .symbol {
+      font-weight: bold;
+    }
+
+    .heart {
+      @include size(20px);
+
+      margin: 0 5px;
+
+      background-image: url(../../../assets/icons/heart.svg);
+      transition: all .8s ease-in-out;
+      background-size: cover;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+
+  @media screen and (max-width: $lg) {
+    height: 50px;
+  }
+}

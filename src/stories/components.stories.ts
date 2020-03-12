@@ -10,12 +10,14 @@ import { moduleMetadata } from '@storybook/angular';
 import { CoreRoutingModule } from 'src/app/core/core-routing.module';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './components/footer/footer.component';
 
 export default {
   title: 'Components',
   component: [
     HeaderComponent,
-    MobileMenuComponent
+    MobileMenuComponent,
+    FooterComponent
   ],
   decorators: [
     moduleMetadata({
@@ -32,7 +34,10 @@ export default {
       ],
       providers: [
       ],
-      declarations: [HeaderComponent, MobileMenuComponent],
+      declarations: [
+        HeaderComponent,
+        MobileMenuComponent
+      ],
     })
   ]
 };
@@ -47,6 +52,15 @@ export const header = () => ({
 
 header.story = {
   name: 'Header',
+};
+
+export const footer = () => ({
+  component: FooterComponent,
+  props: {}
+});
+
+footer.story = {
+  name: 'footer',
 };
 
 // export const headerMobile: {
