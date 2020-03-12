@@ -1,1 +1,49 @@
-<p>home works!</p>
+<div class="home-container">
+  <div class="author-wrapper">
+    <div class="author-of-the-day">
+      <div class="description">
+        <div class="description__heading">
+          <h1>{{ 'page.home.writer-of-day-title' | translate}}</h1>
+          <p>{{ this.contentService.authorOfTheDay?.summary }}</p>
+        </div>
+        <button mat-button class="description__button">
+          {{ 'page.home.more-btn' | translate}}<mat-icon>arrow_right_alt</mat-icon>
+        </button>
+      </div>
+      <div class="author">
+        <img class="author__image" src="{{this.contentService.authorOfTheDay?.images.split(',')[0]}}" alt="Author">
+        <h3 class="author__name">
+          <span>{{this.contentService.authorOfTheDay?.firstname}} </span>
+          <span>{{this.contentService.authorOfTheDay?.lastname}}</span>
+        </h3>
+        <p class="author__title">{{this.contentService.authorOfTheDay?.title}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="about-wrapper">
+    <div class="about-us">
+      <div class="description">
+        <div class="description__heading">
+          <p> {{ 'page.home.who-we' | translate}} </p>
+          <h1>
+          {{ 'page.home.about-title' | translate}}
+          </h1>
+        </div>
+        <div class="description__about-text">
+          {{ 'page.home.about' | translate}}
+        </div>
+        <button mat-raised-button class="description__button" (click)="teamPage()">
+          {{ 'page.home.meet-team' | translate}}
+        </button>
+      </div>
+      <div class="quote">
+        <p class="quote__text">
+          {{'page.home.quote' | translate}}
+        </p>
+        <p class="quote__title">
+          {{'page.home.author' | translate}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

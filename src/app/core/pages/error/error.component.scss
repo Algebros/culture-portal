@@ -1,0 +1,55 @@
+@import "index";
+
+.error {
+  @include size(100% ,auto);
+  @include font($font: 'Roboto Slab');
+
+  max-width: $sm;
+
+  padding: 1rem;
+
+  text-align: center;
+
+
+  &__outer {
+    @include size(100%);
+    @include relative(top 0 left 0);
+    @include flex(center, center, $direction: column);
+  }
+
+  &__header {
+    @include font(180px, $bg-purple);
+
+    margin: 0;
+  }
+
+  &__description {
+    @include font(36px, $bg-purple);
+
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+
+  &__details {
+    @include font(16px, $black50);
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+}
+
+
+@media only screen and (max-width: $sm) {
+  .error {
+
+    &__header {
+      font-size: 128px;
+    }
+
+    &__description {
+      font-size: 24px;
+    }
+  }
+}

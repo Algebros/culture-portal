@@ -3,7 +3,7 @@ export interface IWorklog {
   works: IWork[];
 }
 
-interface IWork {
+export interface IWork {
   feature: string;
   time: number;
 }

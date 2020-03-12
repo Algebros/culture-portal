@@ -9,11 +9,39 @@ import Author from '../models/author.model';
 })
 export class ContentService {
 
+  private randomInt: number;
   public developers: Developer[];
-
   public authors: Author[];
+  public authorOfTheDay: Author;
 
   constructor(private languageService: LanguageService) {}
+  
+  private randomInteger(min: number, max: number): number {
+    let rand: number = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+  }
+
+  private filterAuthorsById(data: Author[]): Author[] {
+    return data.filter(item => item.id);
+  }
+
+  public getAuthors(): void  {
+    butterService.content
+      .retrieve(['author'], { locale: this.languageService.language })
+      .then(response => {
+
+        this.authors = this.filterAuthorsById(response.data.data.author);
+
+        if (!this.randomInt) {
+          this.randomInt = this.randomInteger(0, 8);
+          this.authorOfTheDay = this.authors[this.randomInt];
+        } else {
+          this.authorOfTheDay = this.authors[this.randomInt];
+        }
+
+      })
+      .catch(error => console.log(error));
+  }
 
   public getDevelopers(): void {
     butterService.content
@@ -22,12 +50,6 @@ export class ContentService {
       .catch(error => console.error(error));
   }
 
-  public getAuthors(): Promise<Author[]> {
-    return butterService.content
-      .retrieve(['author'], { locale: this.languageService.language })
-      .then(authors => this.authors = authors.data.data.author.filter(author => author.firstname))
-      .catch(error => console.error(error));
-  }
 
   public getAuthorById(id: string): Author {
      return this.authors.find(author => author.id === +id);

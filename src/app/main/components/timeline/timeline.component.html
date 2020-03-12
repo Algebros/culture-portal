@@ -2,6 +2,6 @@
   <mat-step *ngFor="let activity of biography, let i = index">
     <ng-template matStepLabel>{{ activity.date }}</ng-template>
     <div class="content">{{ activity.content }}</div>
-    <button mat-button matStepperNext *ngIf="i !== biography.length - 1">Next</button>
+    <button mat-button matStepperNext *ngIf="i !== biography.length - 1">{{"page.author.timeline.next-btn" | translate}}</button>
   </mat-step>
 </mat-vertical-stepper>

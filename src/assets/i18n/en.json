@@ -1,6 +1,7 @@
 {
   "header": {
     "nav": {
+      "title": "The Culture Portal",
       "home": "HOME",
       "writers": "WRITERS",
       "team": "TEAM",
@@ -13,7 +14,14 @@
   },
   "page": {
     "home": {
-
+      "quote": "The greatest glory of the people is its writers",
+      "author": "Benjamin Jonson",
+      "who-we": "Who we are?",
+      "about-title": "About us",
+      "about": "Our project was created to acquaint a wide audience with outstanding Belarusian writers and their works. Our team collected the most important information about poets and presented it in a visual form. Our goal is to draw maximum attention to the classics of Belarusian literature, because we are sure that it is extremely important to know and remember legendary personalities.",
+      "meet-team": "Meet our team",
+      "writer-of-day-title": "Writer of the day",
+      "more-btn": "Learn more"
     },
     "authors": {
       "header": "Writers",
@@ -23,21 +31,34 @@
       "works": "works"
     },
     "author": {
-
+      "timeline": {
+        "next-btn": "Next"
+      },
+      "works": {
+        "year": "Year",
+        "title": "Title"
+      }
     },
     "team": {
       "header": "Meet our team"
     },
     "worklog": {
       "header": "Worklog",
+      "feature": "Feature",
+      "spent": "Time spent (hours)",
+      "total": "Total:",
       "developer": {
         "anhelina-lakhtanava": "Anhelina Lakhtanava",
         "denis-paragas": "Denis Parágas",
         "katsiaryna-zhdanovich": "Katsiaryna Zhdanovich",
         "sofroniy-miadvedzeu": "Sofroniy Miadvedzeu",
-        "yauhen-pachankou": "Yauhen Kalanitski",
-        "yauhen-kalanitski": "Yauhen Pachankou"
+        "yauhen-pachankou": "Yauhen Pachankou",
+        "yauhen-kalanitski": "Yauhen Kalanitski"
       }
+    },
+    "error": {
+      "description": "OOPS! NOTHING WAS FOUND",
+      "details": "The page you are looking for might have been removed had its name changed or is temporarily unavailable."
     }
   }
 }
