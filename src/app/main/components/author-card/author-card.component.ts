@@ -8,8 +8,4 @@ import Author from '../../models/author.model';
 })
 export class AuthorCardComponent {
   @Input() public author: Author;
-
-  constructor() {
-    console.log(this.author);
-  }
 }
