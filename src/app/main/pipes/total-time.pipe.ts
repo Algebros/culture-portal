@@ -1,4 +1,4 @@
-import { IWork } from './../models/worklog.model';
+import { IWork } from '../models/worklog.model';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

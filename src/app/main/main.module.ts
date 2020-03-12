@@ -43,7 +43,7 @@ import { TotalTimePipe } from './pipes/total-time.pipe';
     DeveloperCardComponent,
     WorksComponent,
     YoutubeVideoModalComponent,
-    SearchAuthorPipe
+    SearchAuthorPipe,
     TotalTimePipe
   ],
   entryComponents: [
@@ -60,7 +60,7 @@ import { TotalTimePipe } from './pipes/total-time.pipe';
     MatInputModule,
     MatCardModule,
     TranslateModule,
-    FormsModule
+    FormsModule,
     TranslateModule,
     MatIconModule,
     MatExpansionModule,
