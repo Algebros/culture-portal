@@ -42,6 +42,7 @@
 
       &__outer {
         @include flex(center, center);
+        cursor: pointer;
       }
 
       &__title {
