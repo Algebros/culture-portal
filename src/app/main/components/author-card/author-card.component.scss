@@ -19,7 +19,7 @@
 }
 
 .author__btn-block {
-  @include absolute(bottom -15px left 50%);
+  @include absolute(top 100% left 50%);
 
   padding: 0 !important;
 
