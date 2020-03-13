@@ -41,15 +41,7 @@
   }
 
   &:before {
-    @include size(4px, 90px);
-    @include absolute(top 0 left -75px);
-
-    background: black;
-    content: '';
-
-    @media screen and (max-width: $xl) {
-      visibility: hidden;
-    }
+    @include pseudo-line;
   }
 
   &__header {

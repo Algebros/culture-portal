@@ -40,7 +40,8 @@
       }
     },
     "team": {
-      "header": "Meet our team"
+      "header": "Meet our team",
+      "hint": "The most professional developers"
     },
     "worklog": {
       "header": "Worklog",
