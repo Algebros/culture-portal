@@ -26,7 +26,7 @@
     "authors": {
       "header": "Writers",
       "placeholder": "Search",
-      "criteria": "search by:",
+      "criteria": "by",
       "name": "name",
       "works": "works"
     },
