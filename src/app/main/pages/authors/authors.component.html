@@ -1,9 +1,7 @@
 <div class="authors-page">
   <div class="authors-page__inner">
-
     <div class="authors-page__head">
       <h2 class="authors-page__title">{{'page.authors.header' | translate}}</h2>
-
       <div class="authors-page__search search">
         <div class="search-panel" *ngIf="showSearchWidget">
           <mat-form-field class="search__input">
@@ -21,9 +19,7 @@
           <mat-icon>search</mat-icon>
         </button>
       </div>
-
     </div>
-
     <div class="authors-page__authors">
       <app-author-card *ngFor="let author of contentService.authors | searchAuthor:sortingCriteria:searchValue" [author]="author"></app-author-card>
     </div>

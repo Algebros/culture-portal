@@ -28,17 +28,17 @@
     margin-top: 5%;
     margin-bottom: 3%;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       @include flex(space-evenly, $direction: column);
       @include size(auto);
 
-      margin-bottom: 30px;
+      margin-bottom: 20px;
 
       text-align: center;
     }
 
     @media screen and (max-width: $lg) {
-      justify-content: space-evenly;
+      justify-content: space-between;
       text-align: center;
     }
 
@@ -106,18 +106,19 @@
 
 .authors-page__search {
   align-self: center;
-  margin-bottom: 15px;
 }
 
 .search {
-  @include size(80%, auto);
   @include flex(center, center);
-  position: relative;
-  height: 60px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .search__input {
   @include size(100%, auto);
+
   flex-basis: 45%;
   text-align: center;
   display: block;
@@ -144,8 +145,8 @@
 
   list-style: none;
 
-  @media screen and (max-width: $sm) {
-    width: 190px;
+  @media screen and (max-width: 768px) {
+    //width: 190px;
   }
 
   p {
@@ -154,7 +155,9 @@
 }
 
 .search__criteria {
-  padding: 5px 10px;
+  margin: 0 1rem;
+  padding: 5px;
+
   border: 0;
 
   background-color: transparent;
@@ -168,40 +171,43 @@
   }
 
   &--active {
-    border: 1px solid $black75;
+    border: 1px solid $black50;
   }
 
   &:not(.search__criteria--active) {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $black50;
   }
 }
 
-.search-btn {
-  @include size(60px, 60px);
-  @include flex(center, center);
-  position: absolute;
-  right: 0;
-  .mat-icon {
-    @include size(40px, 40px);
-    font-size: 40px;
-    color: $black50;
-    line-height: initial;
+.mat-icon-button {
+  @media screen and (max-width: 768px) {
+    order: 1;
   }
+}
+
+.mat-icon {
+  @include size(40px, 40px);
+  @include font(40px, $black50, $line: 40px);
 }
 
 .search-panel {
   @include flex(center, center);
-  width: $sm;
 
-  @media screen and (max-width: $sm) {
+  @media screen and (max-width: 768px) {
+    @include size(auto);
+
     flex-direction: column;
-    width: 300px;
+    order: 2;
+
+    & mat-form-field{
+      width: 210px !important;
+    }
   }
 }
 
 .dot {
-  width: 5px;
-  height: 5px;
+  @include size(5px);
+
   border-radius: 50%;
-  background-color: $black75;
+  background-color: $black50;
 }
