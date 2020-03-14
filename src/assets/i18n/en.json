@@ -37,7 +37,14 @@
       "works": {
         "year": "Year",
         "title": "Title"
-      }
+      },
+      "title": {
+        "biography": "Biography",
+        "works": "Works",
+        "places": "Significant places"
+      },
+      "youtube": "Watch video",
+      "button": "Learn more"
     },
     "team": {
       "header": "Meet our team",

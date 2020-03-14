@@ -1,11 +1,11 @@
 <div class="team">
   <div class="team__inner">
-      <div class="team-head">
-        <p class="team-head__header">{{ 'page.team.header' | translate }}</p>
-        <p class="team-head__hint">{{ 'page.team.hint' | translate }}</p>
-      </div>
+    <div class="team-head">
+      <p class="team-head__header">{{ 'page.team.header' | translate }}</p>
+      <p class="team-head__hint">{{ 'page.team.hint' | translate }}</p>
+    </div>
     <div class="team-body">
-      <app-developer-card *ngFor="let developer of this.contentService.developers" [developer]="developer"></app-developer-card>
+      <app-developer-card *ngFor="let developer of this.contentService.developers[this.languageService.language]" [developer]="developer"></app-developer-card>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 interface SelfEvaluationCriteria {
   criteria: string;
   points: string;
+  isChecked: boolean;
 }
 
 export default interface Scopes {

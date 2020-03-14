@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
 import Scopes from '../../models/self-evaluation-scopes.model';
 import {scopes} from '../../mocks/self-evaluation-mock';
 
@@ -8,17 +8,33 @@ import {scopes} from '../../mocks/self-evaluation-mock';
   styleUrls: ['./self-evaluation.component.scss']
 })
 export class SelfEvaluationComponent {
-  @ViewChild('checkbox', {static: false}) public checkbox: ElementRef;
-
   public scopes: Scopes = scopes;
 
-  public score: number = 0;
+  public minScore: number = 0;
 
-  public changeTotalScore(points: string): void {
-    if ((this.checkbox.nativeElement as HTMLInputElement).checked) {
-      this.score += +points;
-    } else {
-      this.score -= +points;
-    }
+  public normalScore: number = 0;
+
+  get sumMinScore(): number {
+    return this.scopes.min
+      .filter(criteria => criteria.isChecked)
+      .reduce((a, b) => a + +b.points, this.minScore);
+  }
+
+  get sumNormalScore(): number {
+    return this.scopes.normal
+      .filter(criteria => criteria.isChecked)
+      .reduce((a, b) => a + +b.points, this.minScore);
+  }
+
+  get sumExtraScore(): number {
+    return this.scopes.extra
+      .filter(criteria => criteria.isChecked)
+      .reduce((a, b) => a + +b.points, this.minScore);
+  }
+
+  get sumFinesScore(): number {
+    return this.scopes.fines
+      .filter(criteria => criteria.isChecked)
+      .reduce((a, b) => a + +b.points, this.minScore);
   }
 }

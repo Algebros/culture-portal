@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Subscription} from 'rxjs';
-import {LanguageService} from '../../services/language.service';
-import {ContentService} from '../../services/content.service';
+import { LanguageService } from '../../services/language.service';
+import { ContentService } from '../../services/content.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-authors',
@@ -9,24 +9,21 @@ import {ContentService} from '../../services/content.service';
   styleUrls: ['./authors.component.scss']
 })
 export class AuthorsComponent implements OnInit {
+
   private subscription: Subscription;
 
   public searchValue: string = '';
-
   public sortingCriteria: string = 'name';
-
   public showSearchWidget: boolean = false;
 
-  constructor(
-    private languageService: LanguageService,
-    public contentService: ContentService
-  ) {}
-
-  public ngOnInit(): void {
+  constructor(public languageService: LanguageService,
+              public contentService: ContentService) {
     this.subscription = this.languageService.changeLanguage.subscribe(() => {
       this.contentService.getAuthors();
     });
+  }
 
+  public ngOnInit(): void {
     this.contentService.getAuthors();
   }
 

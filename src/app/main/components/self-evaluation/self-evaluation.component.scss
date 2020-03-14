@@ -9,6 +9,13 @@
 .evaluation__criteria {
   display: flex;
   flex-direction: column;
-
-  white-space: normal;
 }
+
+::ng-deep .mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+::ng-deep .mat-checkbox-inner-container {
+  margin-top: 3px !important;
+}
+
