@@ -1,1 +1,27 @@
-<p>authors works!</p>
+<div class="authors-page">
+  <div class="authors-page__inner">
+    <div class="authors-page__head">
+      <h2 class="authors-page__title">{{'page.authors.header' | translate}}</h2>
+      <div class="authors-page__search search">
+        <div class="search-panel" *ngIf="showSearchWidget">
+          <mat-form-field class="search__input">
+            <mat-label>{{'page.authors.placeholder' | translate}}</mat-label>
+            <input matInput type="text" [(ngModel)]="searchValue">
+          </mat-form-field>
+          <div class="search__criteria-block">
+            <p class="">{{'page.authors.criteria' | translate}}</p>
+            <button class="search__criteria" [class.search__criteria--active]="sortingCriteria==='name'" (click)="sortingCriteria='name'">{{'page.authors.name' | translate}}</button>
+            <div class="dot"></div>
+            <button class="search__criteria" [class.search__criteria--active]="sortingCriteria==='works'" (click)="sortingCriteria='works'">{{'page.authors.works' | translate}}</button>
+          </div>
+        </div>
+        <button mat-icon-button class="search-btn" (click)="showPanel()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="authors-page__authors">
+      <app-author-card *ngFor="let author of contentService.authors | searchAuthor:sortingCriteria:searchValue" [author]="author"></app-author-card>
+    </div>
+  </div>
+</div>

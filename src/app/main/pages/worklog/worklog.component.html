@@ -1,21 +1,27 @@
-<h2>{{'page.worklog.header' | translate}}</h2>
-
-<div *ngFor="let developer of worklog">
-  <h3>{{developer.name | translate}}</h3>
-
-  <table mat-table [dataSource]="developer.works" class="mat-elevation-z8">
-    <ng-container matColumnDef="feature">
-      <th mat-header-cell *matHeaderCellDef>Feature</th>
-      <td mat-cell *matCellDef= "let work">{{work.feature}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="time">
-      <th mat-header-cell *matHeaderCellDef>Time spent (hours)</th>
-      <td mat-cell *matCellDef = "let work">{{work.time}}</td>
-    </ng-container>
-
-   <tr mat-header-row *matHeaderRowDef="columns"></tr>
-   <tr mat-row *matRowDef="let row; columns: columns"></tr>
-  </table>
+<div class="wrapper">
+  <div class="wrapper__inner">
+    <div class="wrapper-head">
+      <h2 class="wrapper-head__header">{{'page.worklog.header' | translate}}</h2>
+    </div>
+    <div class="wrapper-body">
+      <div *ngFor="let developer of worklog" class="worklog">
+        <h3>{{prefix + developer.name | translate}}</h3>
+        <table mat-table [dataSource]="developer.works" class="mat-elevation-z8">
+          <ng-container matColumnDef="feature">
+            <th mat-header-cell *matHeaderCellDef>{{'page.worklog.feature' | translate}}</th>
+            <td mat-cell *matCellDef="let work;">{{work.feature}}</td>
+            <td mat-footer-cell *matFooterCellDef>{{'page.worklog.total' | translate}}</td>
+          </ng-container>
+          <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef>{{'page.worklog.spent' | translate}}</th>
+            <td mat-cell *matCellDef="let work;">{{work.time}}</td>
+            <td mat-footer-cell *matFooterCellDef>{{developer.works | totalTime}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="columns"></tr>
+          <tr mat-row *matRowDef="let row; columns: columns"></tr>
+          <tr mat-footer-row *matFooterRowDef="columns"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-

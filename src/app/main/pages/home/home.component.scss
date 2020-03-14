@@ -117,6 +117,7 @@
     height: 550px;
     @include box-shadow(0, 4px, 21px, 0, $black25);
     @include flex();
+    background-color: white;
     .about-us {
       width: $lg;
       margin: 0 auto;

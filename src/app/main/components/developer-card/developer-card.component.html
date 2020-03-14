@@ -1,7 +1,28 @@
 <div class="team-card">
+  <button mat-icon-button class="btn" (click)="togglePanel()">
+      <mat-icon>more_horiz</mat-icon>
+  </button>
+  <mat-expansion-panel [expanded]="panelOpenState"
+                        *ngIf="panelOpenState"
+                        class="team-card__expansion-panel">
+    <mat-panel-description>
+      <button mat-icon-button class="btn" (click)="togglePanel()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-panel-description>
+    <p>
+      <mat-chip-list>
+        <mat-chip
+          *ngFor="let contribution of developer.contribution.split(', ')"
+          color="accent"
+          selected>
+          {{ contribution }}
+        </mat-chip>
+      </mat-chip-list>
+    </p>
+  </mat-expansion-panel>
   <img class="team-card__image" src="{{developer.avatar}}" alt="avatar">
   <span class="team-card__name">{{developer.name}}</span>
-  <span class="team-card__contribution">{{developer.contribution}}</span>
   <div class="team-card__inner">
     <img class="team-card__icon" src="../../../../assets/icons/github.svg" alt="github icon">
     <a class="team-card__github" href="{{developer.github}}">{{developer.github.replace('https://', '')}}</a>

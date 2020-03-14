@@ -16,11 +16,10 @@ export class MapComponent implements OnInit, AfterContentInit, OnDestroy {
   constructor(private _mapService: MapService) { }
 
   public ngOnInit(): void {
-    this._mapService.locations = this.incomeLocations;
   }
 
   public ngAfterContentInit(): void {
-    ymaps.ready(this._mapService.initMap);
+    ymaps.ready(this._mapService.initMap(this.incomeLocations));
   }
 
   public ngOnDestroy(): void {

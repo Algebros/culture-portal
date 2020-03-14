@@ -1,7 +1,9 @@
 <div class="body-inner">
   <app-header></app-header>
   <main>
-    <router-outlet></router-outlet>
+    <div [@routeChangeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
   </main>
   <app-footer></app-footer>
 </div>

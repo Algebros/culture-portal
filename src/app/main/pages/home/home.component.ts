@@ -35,4 +35,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this._router.navigateByUrl(this._router.url + '/team');
   }
 
+  public navigateToAuthor(id: number): void {
+    this._router.navigateByUrl(`${this._router.url}/author/${id}`);
+  }
+
 }

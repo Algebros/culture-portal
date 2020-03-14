@@ -1,7 +1,5 @@
 @import "index";
 
-$main-color: rgba(0,0,0,0);
-
 .sliderAuthors {
 	width: 350px;
 	height: 512px;
@@ -13,8 +11,8 @@ $main-color: rgba(0,0,0,0);
 	top: 543px;
 	width: 27%;
 	font-size: 20px;
-	color: $main-color;
-	background-color: $main-color;
+	color: #000000;
+	background-color: #000000;
 	filter: 0;
 	opacity: 1;
 	text-shadow: 0 1px 1px rgba(0,0,0,1);
@@ -33,21 +31,6 @@ $main-color: rgba(0,0,0,0);
 .carousel-control.right,
 .carousel-control.left {
 	background-image: none;
-}
-
-
-@media screen and (min-width: 768px) {
-  .carousel-control .glyphicon-chevron-left,
-  .carousel-control .glyphicon-chevron-right,
-  .carousel-control .icon-next,
-  .carousel-control .icon-prev {
-    top: 10px;
-    line-height: 30px;
-    width: 30px;
-    height: 30px;
-    margin-top: -10px;
-    font-size: 15px;
-	}
 }
 
 .carousel-indicators {
@@ -80,5 +63,41 @@ $main-color: rgba(0,0,0,0);
 	width: 10px;
 	height: 10px;
 	margin: 0px 10px;
-	background-color: $main-color;
+	background-color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-next,
+  .carousel-control .icon-prev {
+    top: 10px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 15px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: auto;
+	}
+}
+
+@media screen and (max-width: $xs) {
+	.carousel-control.left {
+		margin: 0;
+		padding: 0;
+	}
+
+	.carousel-control.right {
+		margin: 0;
+		padding: 0;
+	}
+
+	.carousel-indicators {
+		display: none;
+	}
 }

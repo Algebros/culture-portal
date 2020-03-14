@@ -20,6 +20,15 @@ import { VideoModalService } from './services/video-modal.service';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import { SearchAuthorPipe } from './pipes/search-author.pipe';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatChipsModule } from '@angular/material/chips';
+import { TotalTimePipe } from './pipes/total-time.pipe';
+import { SplitPipe } from './pipes/split.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +43,10 @@ import { TranslateModule } from '@ngx-translate/core';
     AuthorsComponent,
     DeveloperCardComponent,
     WorksComponent,
-    YoutubeVideoModalComponent
+    YoutubeVideoModalComponent,
+    SearchAuthorPipe,
+    TotalTimePipe,
+    SplitPipe
   ],
   entryComponents: [
     YoutubeVideoModalComponent
@@ -46,8 +58,15 @@ import { TranslateModule } from '@ngx-translate/core';
     MatStepperModule,
     MatButtonModule,
     MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
     TranslateModule,
-    MatIconModule
+    FormsModule,
+    TranslateModule,
+    MatIconModule,
+    MatExpansionModule,
+    MatChipsModule,
    ],
   providers: [
     VideoModalService
