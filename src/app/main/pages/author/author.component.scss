@@ -6,8 +6,6 @@ $indent-title: 20px;
 :host {
 
   .container {
-    position: relative;
-    z-index: -1;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -109,7 +107,7 @@ $indent-title: 20px;
         }
 
         .places {
-        
+
           .title {
             display: flex;
             font-family: "Roboto Mono";
@@ -168,7 +166,7 @@ $indent-title: 20px;
             font-size: 20px;
           }
         }
-        
+
         @media screen and (max-width: $md) {
           max-width: 275px;
         }
