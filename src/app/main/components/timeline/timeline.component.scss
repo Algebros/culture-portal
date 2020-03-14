@@ -1,3 +1,11 @@
+@import "index";
+
 .content {
   margin: 10px 0;
+}
+
+mat-vertical-stepper {
+  @include font($font: 'Roboto Slab');
+
+  background: $bg-creme-brulee !important;
 }
