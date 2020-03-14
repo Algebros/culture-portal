@@ -11,6 +11,10 @@ export class SearchAuthorPipe implements PipeTransform {
       return authors;
     }
 
+    if (!authors) {
+      return authors;
+    }
+
     switch (criteria) {
       case 'name':
         return authors
