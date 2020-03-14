@@ -3,6 +3,8 @@ import {VideoModalService} from '../../services/video-modal.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {ContentService} from '../../services/content.service';
 import Author from '../../models/author.model';
+import { LanguageService } from '../../services/language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-author',
@@ -10,20 +12,28 @@ import Author from '../../models/author.model';
   styleUrls: ['./author.component.scss'],
 })
 export class AuthorComponent implements OnInit {
+  public subscription: Subscription;
+
   public author: Author;
 
+  public displayedColumns: string[] = ['date', 'description'];
+
   constructor(
+    public videoModalService: VideoModalService,
     private route: ActivatedRoute,
     public contentService: ContentService,
-    public videoModalService: VideoModalService
-) {}
+    private languageService: LanguageService,
+    ) { }
 
-  public ngOnInit (): void {
-    this.route.params.subscribe((params: Params) => {
-       this.contentService.getAuthors()
-         .then(authors => {
-           this.author = this.contentService.getAuthorById(params.id);
-         });
+  public ngOnInit(): void {
+    this.subscription = this.languageService.changeLanguage.subscribe(() => {
+      this.contentService.getAuthors();
     });
+
+    this.route.params.subscribe((data) => this.author = this.contentService.getAuthorById(data.id));
+  }
+
+  public ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

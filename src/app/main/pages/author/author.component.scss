@@ -1,0 +1,264 @@
+@import "index";
+
+$indent: 70px;
+$indent-title: 20px;
+
+:host {
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+
+      &__left {
+        width: 50%;
+        padding: 5%;
+        background-color: #FDFFF7;
+
+        box-shadow: inset 0 8px 8px -6px  $black25;
+
+        .personal {
+          display: flex;
+          flex-direction: column;
+          padding-left: $indent;
+          margin-bottom: 50px;
+          border-left: 4px solid #000;
+
+          font-family: "Roboto Slab";
+
+          &__name {
+            font-size: 48px;
+            line-height: 63px;
+            color: #000;
+          }
+
+          &__subtitle {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 21px;
+            color: rgba(0, 0, 0, 0.7);
+          }
+
+          &__date {
+            font-size: 16px;
+            line-height: 21px;
+            color: rgba(0, 0, 0, 0.7);
+          }
+        }
+
+        .biography {
+          margin-bottom: 20px;
+
+          .title {
+            display: flex;
+            font-family: "Roboto Mono";
+            margin-bottom: $indent-title;
+
+            &__icon {
+              font-family: "Roboto";
+              font-style: normal;
+              font-weight: bold;
+              font-size: 40px;
+              line-height: 47px;
+              color: #000000;
+            }
+
+            &__text {
+              padding: 0;
+              margin: 0;
+              font-style: italic;
+              font-weight: 300;
+              font-size: 40px;
+              line-height: 47px;
+              color: #000000;
+            }
+          }
+        }
+
+        .works {
+          margin-bottom: 20px;
+
+          .title {
+            display: flex;
+            font-family: "Roboto Mono";
+            margin-bottom: $indent-title;
+
+            &__icon {
+              font-family: "Roboto";
+              font-style: normal;
+              font-weight: bold;
+              font-size: 40px;
+              line-height: 47px;
+              color: #000000;
+            }
+
+            &__text {
+              padding: 0;
+              margin: 0;
+              font-style: italic;
+              font-weight: 300;
+              font-size: 40px;
+              line-height: 47px;
+              color: #000000;
+            }
+          }
+
+          .table {
+            width: 90%;
+            margin-left: $indent;
+          }
+        }
+
+        .places {
+          margin-bottom: 20px;
+          .title {
+            display: flex;
+            font-family: "Roboto Mono";
+            margin-bottom: $indent-title;
+
+            &__icon {
+              font-family: "Roboto";
+              font-style: normal;
+              font-weight: bold;
+              font-size: 40px;
+              line-height: 47px;
+              color: #000000;
+            }
+
+            &__text {
+              padding: 0;
+              margin: 0;
+              font-style: italic;
+              font-weight: 300;
+              font-size: 40px;
+              line-height: 47px;
+              color: #000000;
+            }
+          }
+
+          .map {
+            margin-left: $indent;
+          }
+        }
+      }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      padding-top: 5%;
+      background-color: #F8F5DA;
+      box-shadow: 0 4px 10px $black25,
+                  inset 0 8px 8px -6px  $black25;
+      .quote {
+        @include flex(flex-start, center, column);
+        align-self: center;
+        max-width: 300px;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        height: 80%;
+        &__text {
+          position: relative;
+          @include font($font: 'Roboto Slab', $size: 25px, $color: black);
+          text-align: end;
+          &::before {
+            @include pseudo-quote;
+          }
+          @media screen and (max-width: $md) {
+            font-size: 20px;
+          }
+        }
+
+        @media screen and (max-width: $md) {
+          max-width: 275px;
+        }
+        @media screen and (max-width: $sm) {
+          @include flex(center, center, column);
+        }
+      }
+
+      .youtube-btn {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        width: 313px;
+        margin-bottom: 50px;
+        line-height: 38px;
+        border: 3px solid rgba(0, 0, 0, 0.5);
+        border-radius: 0px 13px 16px 0px;
+        cursor: pointer;
+        @include font($font: 'Roboto Slab', $size: 18px, $color: black);
+
+        .youtube-icon {
+          position: absolute;
+          right: -3px;
+        }
+      }
+    }
+  }
+
+    @media screen and (max-width: $md) {
+    .container {
+      flex-direction: column;
+
+      &__left {
+        order: 2;
+        width: 100%;
+
+        .works {
+          .table {
+            padding: 0;
+            margin: 0 auto;
+          }
+        }
+
+        .places {
+          .map {
+            margin: 0 auto;
+          }
+        }
+      }
+
+      &__right {
+        order: 1;
+        width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: $xs) {
+    .container {
+
+      &__left {
+
+        .personal {
+          padding: 0;
+          border-left: 0;
+        }
+
+        .works {
+          .table {
+            padding: 0;
+            margin: 0 auto;
+          }
+        }
+
+        .places {
+          .map {
+            margin: 0 auto;
+          }
+        }
+      }
+
+      &__right {
+        order: 1;
+        width: 100%;
+      }
+    }
+  }
+}
