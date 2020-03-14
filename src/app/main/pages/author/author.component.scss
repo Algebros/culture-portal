@@ -199,6 +199,12 @@ $indent-title: 20px;
           right: -3px;
         }
       }
+
+      @media screen and (max-width: $sm) {
+        .youtube-btn {
+          width: 250px;
+        }
+      }
     }
   }
 
