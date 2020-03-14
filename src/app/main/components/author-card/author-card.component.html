@@ -1,10 +1,12 @@
 <mat-card class="author">
-  <img class="author__photo" mat-card-image [src]="author.images.split(',')[0]" alt="author's photo">
+  <div class="author__inner">
+    <img class="author__photo" mat-card-image [src]="author.images.split(',')[0]" alt="author's photo">
+  </div>
   <mat-card-content>
     <mat-card-title>{{author.firstname + ' ' + author.lastname}}</mat-card-title>
     <p>{{author.title}}</p>
   </mat-card-content>
   <mat-card-actions class="author__btn-block">
-    <button class="author__btn" mat-button [routerLink]="['/home', languageService.language, 'author', author.id]">more</button>
+    <button class="author__btn" mat-button [routerLink]="['/home', languageService.language, 'author', author.id]">{{'page.author.button' | translate}}</button>
   </mat-card-actions>
 </mat-card>

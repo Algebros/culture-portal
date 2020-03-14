@@ -17,4 +17,7 @@ export class HeaderComponent implements OnInit {
     this.languageService.changeLanguage.next((event.target as HTMLButtonElement).dataset.language);
   }
 
+  public goHome(): void {
+    this.router.navigateByUrl(`/home/${this.languageService.language}`);
+  }
 }

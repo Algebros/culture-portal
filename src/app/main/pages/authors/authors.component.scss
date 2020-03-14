@@ -1,120 +1,213 @@
 @import 'index';
 
 .authors-page {
-  @include size(100%, auto);
+  @include size(100%);
+  @include font($font: 'Roboto Slab');
 
-  display: flex;
-  flex-direction: column;
-  padding: 30px 0;
-
+  box-shadow: inset 0 8px 8px -6px  $black25;
   background-color: #FDFFF7;
+
+  &__inner {
+    @include flex($direction: column);
+
+    max-width: $lg;
+
+    margin: 0 auto;
+    padding: 0 75px;
+
+    @media screen and (max-width: $md) {
+      padding: 0;
+    }
+  }
+
+  &__head {
+    @include flex(space-between, center);
+    @include size(100%, 90px);
+    @include relative(top 0 left 0);
+
+    margin-top: 5%;
+    margin-bottom: 3%;
+
+    @media screen and (max-width: 1024px) {
+      @include flex(space-evenly, $direction: column);
+      @include size(auto);
+
+      margin-bottom: 20px;
+
+      text-align: center;
+    }
+
+    @media screen and (max-width: $lg) {
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    &:before {
+      @include size(4px, 90px);
+      @include absolute(top 0 left -75px);
+
+      background: black;
+      content: '';
+
+      @media screen and (max-width: $xl) {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__title {
+    @include font(32px);
+
+    margin: 0;
+
+    @media screen and (min-width: $sm) {
+      @include font(36px);
+    }
+
+    @media screen and (min-width: $md) {
+      @include font(40px);
+    }
+
+    @media screen and (min-width: $lg) {
+      @include font(44px);
+    }
+
+    @media screen and (min-width: $xl) {
+      @include font(48px);
+    }
+  }
+
+  &__authors {
+    width: auto;
+    display: grid;
+    grid-gap: 30px;
+    justify-content: center;
+    justify-items: center;
+    align-self: center;
+
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width: $lg) {
+      margin-bottom: 40px;
+
+      grid-column-gap: 115px;
+      grid-row-gap: 40px;
+    }
+  }
 }
 
 .authors-page__search {
   align-self: center;
-
-  margin-bottom: 40px;
-}
-
-.authors-page__title {
-  @include size(80%, auto);
-  @include font(32px);
-
-  margin-bottom: 35px;
-
-  align-self: center;
-
-  text-align: center;
-
-  @media screen and (min-width: $sm) {
-    @include font(36px);
-
-    text-align: left;
-  }
-
-  @media screen and (min-width: $md) {
-    @include font(40px);
-  }
-
-  @media screen and (min-width: $lg) {
-    @include font(44px);
-  }
-
-  @media screen and (min-width: $xl) {
-    @include font(48px);
-  }
-}
-
-.authors-page__authors {
-  align-self: center;
 }
 
 .search {
-  @include size(80%, auto);
+  @include flex(center, center);
 
-  max-width: $xs;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .search__input {
   @include size(100%, auto);
 
+  flex-basis: 45%;
+  text-align: center;
   display: block;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 18px;
+  margin-right: 15px;
+
+  @media screen and (max-width: 500px) {
+    width: 70%;
+  }
 }
 
 .search__criteria-block {
-  @include font($size: 14px, $color: $black75, $weight: 400, $line: 1.2);
+  @include font($size: 18px, $color: $black75, $weight: 400, $line: 1.2);
+  font-style: italic;;
 
-  display: flex;
+  @include flex(space-between, center);
   align-self: center;
   max-width: $xs;
   margin: 0;
   padding: 0;
+  flex-basis: 33%;
 
   list-style: none;
 
+  @media screen and (max-width: 768px) {
+    //width: 190px;
+  }
+
   p {
     margin: 0;
-
-    font-weight: bold;
   }
 }
 
 .search__criteria {
-  margin: 0 0 0 20px;
-  padding: 0;
+  margin: 0 1rem;
+  padding: 5px;
+
   border: 0;
 
-  text-decoration: underline;
-
   background-color: transparent;
+
+  &:hover:not(.search__criteria--active) {
+    border: 1px solid $black75;
+  }
 
   &:focus {
     outline: none;
   }
 
   &--active {
-    color: tomato;
+    border: 1px solid $black50;
+  }
+
+  &:not(.search__criteria--active) {
+    border-bottom: 1px solid $black50;
   }
 }
 
-.authors {
-  @include size(80%, auto);
-
-  display: grid;
-  grid-gap: 30px;
-  justify-content: center;
-  justify-items: center;
-
-  @media screen and (min-width: $sm) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (min-width: $md) {
-    grid-template-columns: repeat(3, 1fr);
+.mat-icon-button {
+  @media screen and (max-width: 768px) {
+    order: 1;
   }
 }
 
-.authors__card {
-  width: 100%;
-  max-width: 300px;
+.mat-icon {
+  @include size(40px, 40px);
+  @include font(40px, $black50, $line: 40px);
+}
+
+.search-panel {
+  @include flex(center, center);
+
+  @media screen and (max-width: 768px) {
+    @include size(auto);
+
+    flex-direction: column;
+    order: 2;
+
+    & mat-form-field{
+      width: 210px !important;
+    }
+  }
+}
+
+.dot {
+  @include size(5px);
+
+  border-radius: 50%;
+  background-color: $black50;
 }

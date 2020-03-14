@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { SheetsResponse, RangeResponse } from './../models/google-sheets.model';
 import { HttpClient } from '@angular/common/http';
 import { IWorklog } from './../models/worklog.model';
@@ -10,9 +11,9 @@ import { mergeMap, delay } from 'rxjs/operators';
 })
 export class WorklogService {
 
-  private key: string = 'AIzaSyC2WjSIlrLshnULuV0pdt4xX1gx1M3fkUU';
-  private sheet: string = '1vC1GY7Ig7zZagIGY7Oxj_mpWJCg-I8c2BK21A_kOOI4';
-  private url: string = `https://sheets.googleapis.com/v4/spreadsheets/${this.sheet}`;
+  private key: string = environment.GOOGLESHEETS_API_KEY;
+  private sheet: string = environment.SHEET;
+  private url: string = `${environment.GOOGLESHEETS_URL}${this.sheet}`;
   private developers: string[];
   private worklog: IWorklog[] = [];
   private worklog$: BehaviorSubject<IWorklog[]> = new BehaviorSubject<IWorklog[]>([]);

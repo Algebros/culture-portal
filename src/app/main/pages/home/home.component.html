@@ -6,7 +6,7 @@
           <h1>{{ 'page.home.writer-of-day-title' | translate}}</h1>
           <p>{{ this.contentService.authorOfTheDay?.summary }}</p>
         </div>
-        <button mat-button class="description__button">
+        <button mat-button class="description__button" (click)="navigateToAuthor(this.contentService.authorOfTheDay?.id)">
           {{ 'page.home.more-btn' | translate}}<mat-icon>arrow_right_alt</mat-icon>
         </button>
       </div>

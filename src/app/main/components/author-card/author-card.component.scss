@@ -1,27 +1,57 @@
 @import 'index';
 
 .author {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+  @include flex(space-between, $direction: column);
+  @include size(300px, 440px);
+
+  position: relative;
 
   background-color: $bg-green;
+
+  &__inner {
+    min-width: 268px;
+    min-height: 268px;
+
+    overflow: hidden;
+  }
 }
 
 .author__photo {
-  height: 300px;
+  object-fit: cover;
 }
 
 .author__btn-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: auto;
+  @include absolute(top 100% left 50%);
+
+  padding: 0 !important;
+
+  transform: translate(calc(-50% + 8px), -100%);
 }
 
 .author__btn {
+  @include size(120px, 36px);
+
+  font-style: italic;
+
+  padding: 0 !important;
+
   &:focus {
     outline: none;
   }
+}
+
+mat-card-content {
+  @include font(14px, $font: 'Roboto Slab');
+
+  & p {
+    @include size(268px, 80px);
+
+    color: $black75;
+  }
+}
+
+mat-card-title {
+  @include font(18px, $weight: 600);
+
+  margin: 10px 0 !important;
 }

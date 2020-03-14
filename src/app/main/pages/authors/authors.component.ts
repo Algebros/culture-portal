@@ -15,6 +15,8 @@ export class AuthorsComponent implements OnInit {
 
   public sortingCriteria: string = 'name';
 
+  public showSearchWidget: boolean = false;
+
   constructor(
     private languageService: LanguageService,
     public contentService: ContentService
@@ -30,6 +32,10 @@ export class AuthorsComponent implements OnInit {
 
   public ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  public showPanel(): void {
+    this.showSearchWidget = !this.showSearchWidget;
   }
 
 }
