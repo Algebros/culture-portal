@@ -1,26 +1,26 @@
 <div class="container">
   <div id="sliderAuthors" class="carousel slide sliderAuthors" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <!-- <ol class="carousel-indicators">
       <li data-target="#sliderAuthors" data-slide-to="0" class="active"></li>
       <li data-target="#sliderAuthors" data-slide-to="1"></li>
       <li data-target="#sliderAuthors" data-slide-to="2"></li>
-    </ol>
+    </ol> -->
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
 
-      <div class="item active sliderAuthors--item">
-        <img class="carousel--img" src="../../../../assets/images/5. yanka kupala/yanka-kupala.jpg" alt="Photo of author">
+      <div class="item active sliderAuthors--item" *ngFor="let img of images; let idx = index">
+        <img class="carousel--img" [src]="img" alt="Photo of author {{idx}}">
       </div>
 
-      <div class="item sliderAuthors--item">
+      <!-- <div class="item sliderAuthors--item">
         <img class="carousel--img" src="../../../../assets/images/5. yanka kupala/yanka-kupala2.jpg" alt="Photo of author">
       </div>
 
       <div class="item sliderAuthors--item">
         <img class="carousel--img" src="../../../../assets/images/5. yanka kupala/yanka-kupala3.jpg" alt="Photo of author">
-      </div>
+      </div> -->
     </div>
 
     <!-- Left and right controls -->

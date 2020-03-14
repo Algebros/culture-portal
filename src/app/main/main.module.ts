@@ -28,6 +28,7 @@ import { SearchAuthorPipe } from './pipes/search-author.pipe';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
 import { TotalTimePipe } from './pipes/total-time.pipe';
+import { SplitPipe } from './pipes/split.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { TotalTimePipe } from './pipes/total-time.pipe';
     WorksComponent,
     YoutubeVideoModalComponent,
     SearchAuthorPipe,
-    TotalTimePipe
+    TotalTimePipe,
+    SplitPipe
   ],
   entryComponents: [
     YoutubeVideoModalComponent
