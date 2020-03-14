@@ -21,12 +21,14 @@ import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { SearchAuthorPipe } from './pipes/search-author.pipe';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
 import { TotalTimePipe } from './pipes/total-time.pipe';
+import { SelfEvaluationComponent } from './components/self-evaluation/self-evaluation.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { SplitPipe } from './pipes/split.pipe';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
@@ -46,6 +48,7 @@ import { MatDividerModule } from '@angular/material/divider';
     YoutubeVideoModalComponent,
     SearchAuthorPipe,
     TotalTimePipe,
+    SelfEvaluationComponent,
     SplitPipe
   ],
   entryComponents: [
@@ -63,10 +66,12 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     TranslateModule,
     FormsModule,
+    ReactiveFormsModule,
     TranslateModule,
     MatIconModule,
     MatExpansionModule,
     MatChipsModule,
+    MatCheckboxModule,
     MatListModule,
     MatDividerModule
    ],

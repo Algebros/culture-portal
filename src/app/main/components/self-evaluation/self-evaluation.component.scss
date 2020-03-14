@@ -1,0 +1,21 @@
+.evaluation__title {
+  margin-bottom: 30px;
+}
+
+.evaluation__card {
+  margin-bottom: 20px;
+}
+
+.evaluation__criteria {
+  display: flex;
+  flex-direction: column;
+}
+
+::ng-deep .mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+::ng-deep .mat-checkbox-inner-container {
+  margin-top: 3px !important;
+}
+
