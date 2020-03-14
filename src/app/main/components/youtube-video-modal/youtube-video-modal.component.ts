@@ -1,5 +1,6 @@
-import {Component, Inject} from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-youtube-video-modal',
@@ -8,9 +9,16 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 })
 export class YoutubeVideoModalComponent {
 
+  public link: SafeResourceUrl;
+
   constructor(
     public dialogRef: MatDialogRef<YoutubeVideoModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: {videoLink: string}
-  ) {}
+    @Inject(MAT_DIALOG_DATA) public data: {videoLink: string},
+    private sanitizer: DomSanitizer
+  ) {
+    console.log(this.data.videoLink);
+    this.link = this.sanitizer
+    .bypassSecurityTrustResourceUrl(this.data.videoLink.replace('watch?v=', 'embed/'));
+  }
 
 }

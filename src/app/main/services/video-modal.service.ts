@@ -8,8 +8,8 @@ export class VideoModalService {
 
   public openModal(link: string): void {
     this.dialog.open(YoutubeVideoModalComponent, {
-      width: '60vw',
-      height: '70vh',
+      width: '90vw',
+      height: '60vh',
       data: {
         videoLink: link
       }
