@@ -1,18 +1,16 @@
 <div class="container">
   <div id="sliderAuthors" class="carousel slide sliderAuthors" data-ride="carousel">
-    <!-- Indicators -->
+
     <ol class="carousel-indicators">
       <li *ngFor="let img of images; let idx = index; let first = first;" data-target="#sliderAuthors" attr.data-slide-to="{{idx}}" [class.active]="first"></li>
     </ol>
 
-    <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item sliderAuthors--item" *ngFor="let img of images; let idx = index; let first = first;" [class.active]="first">
         <img class="carousel--img" [src]="img" alt="Photo of author {{idx}}">
       </div>
     </div>
 
-    <!-- Left and right controls -->
     <a class="left carousel-control" href="#sliderAuthors" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
