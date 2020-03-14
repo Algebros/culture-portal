@@ -3,7 +3,6 @@ const { AuthorsPlugin } = require('./src/app/shared/plugins/authors.plugin');
 const { AuthorPlugin } = require('./src/app/shared/plugins/author.plugin');
 const { TeamPlugin } = require('./src/app/shared/plugins/team.plugin');
 const { WorklogPlugin } = require('./src/app/shared/plugins/worklog.plugin');
-const { StyleguidePlugin } = require('./src/app/shared/plugins/styleguide.plugin');
 
 exports.config = {
   projectRoot: "./src",
@@ -29,10 +28,6 @@ exports.config = {
     '/home/:language/worklog': {
       type: WorklogPlugin,
       url: 'http://i-hate-alpha-scully.me.sure',
-    },
-    '/home/:language/styleguide': {
-      type: StyleguidePlugin,
-      url: 'http://i-hate-alpha-scully.me.sure',
-    },
+    }
   }
 };

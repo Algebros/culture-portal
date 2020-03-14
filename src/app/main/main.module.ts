@@ -30,6 +30,8 @@ import { TotalTimePipe } from './pipes/total-time.pipe';
 import { SelfEvaluationComponent } from './components/self-evaluation/self-evaluation.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { SplitPipe } from './pipes/split.pipe';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,9 @@ import { SplitPipe } from './pipes/split.pipe';
     MatIconModule,
     MatExpansionModule,
     MatChipsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatListModule,
+    MatDividerModule
    ],
   providers: [
     VideoModalService

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VideoModalService } from '../../services/video-modal.service';
 import { LanguageService } from '../../services/language.service';
-import { ContentService } from '../../services/content.service';
 import { Subscription } from 'rxjs';
 import Author from '../../models/author.model';
 import butterService from '../../../core/services/butter-cms.service';
@@ -20,7 +19,6 @@ export class AuthorComponent implements OnInit {
 
   constructor(public videoModalService: VideoModalService,
               public languageService: LanguageService,
-              public contentService: ContentService,
               public route: ActivatedRoute) {
     this.subscription = this.languageService.changeLanguage.subscribe(() => {
       this.getAuthorById(Number(this.route.snapshot.params.id));
@@ -36,7 +34,6 @@ export class AuthorComponent implements OnInit {
       .retrieve(['author'], { locale: this.languageService.language })
       .then(response => {
         this.author = (response.data.data.author.filter(author => author.id === id))[0];
-        console.log(this.author);
       }).catch(error => console.log(error));
   }
 
