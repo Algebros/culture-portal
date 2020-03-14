@@ -12,15 +12,15 @@
 
     <div class="biography">
       <div class="title">
-        <span class="title__icon">#</span>
         <h3 class="title__text">{{'page.author.title.biography' | translate}}</h3>
       </div>
-      <app-timeline [biography]="author.timeline"></app-timeline>
+      <div class="timeline">
+        <app-timeline [biography]="author.timeline"></app-timeline>
+      </div>
     </div>
 
     <div class="works">
       <div class="title">
-        <span class="title__icon">#</span>
         <h3 class="title__text">{{'page.author.title.works' | translate}}</h3>
       </div>
 
@@ -45,7 +45,6 @@
 
     <div class="places">
       <div class="title">
-        <span class="title__icon">#</span>
         <h3 class="title__text">{{'page.author.title.places' | translate}}</h3>
       </div>
 

@@ -54,8 +54,11 @@ $indent-title: 20px;
             display: flex;
             font-family: "Roboto Mono";
             margin-bottom: $indent-title;
+            position: relative;
 
-            &__icon {
+            &::before {
+              content: '#';
+              position: absolute;
               font-family: "Roboto";
               font-style: normal;
               font-weight: bold;
@@ -67,12 +70,17 @@ $indent-title: 20px;
             &__text {
               padding: 0;
               margin: 0;
+              padding-left: $indent;
               font-style: italic;
               font-weight: 300;
               font-size: 40px;
               line-height: 47px;
               color: #000000;
             }
+          }
+
+          .timeline {
+            margin-left: $indent;
           }
         }
 
@@ -83,8 +91,11 @@ $indent-title: 20px;
             display: flex;
             font-family: "Roboto Mono";
             margin-bottom: $indent-title;
+            position: relative;
 
-            &__icon {
+            &::before {
+              content: '#';
+              position: absolute;
               font-family: "Roboto";
               font-style: normal;
               font-weight: bold;
@@ -96,6 +107,7 @@ $indent-title: 20px;
             &__text {
               padding: 0;
               margin: 0;
+              padding-left: $indent;
               font-style: italic;
               font-weight: 300;
               font-size: 40px;
@@ -116,8 +128,11 @@ $indent-title: 20px;
             display: flex;
             font-family: "Roboto Mono";
             margin-bottom: $indent-title;
+            position: relative;
 
-            &__icon {
+            &::before {
+              content: '#';
+              position: absolute;
               font-family: "Roboto";
               font-style: normal;
               font-weight: bold;
@@ -129,6 +144,7 @@ $indent-title: 20px;
             &__text {
               padding: 0;
               margin: 0;
+              padding-left: $indent;
               font-style: italic;
               font-weight: 300;
               font-size: 40px;
@@ -199,6 +215,12 @@ $indent-title: 20px;
           right: -3px;
         }
       }
+
+      @media screen and (max-width: $sm) {
+        .youtube-btn {
+          width: 250px;
+        }
+      }
     }
   }
 
@@ -209,6 +231,12 @@ $indent-title: 20px;
       &__left {
         order: 2;
         width: 100%;
+
+        .biography {
+          .timeline {
+            margin: 0 auto;
+          }
+        }
 
         .works {
           .table {
@@ -239,6 +267,12 @@ $indent-title: 20px;
         .personal {
           padding: 0;
           border-left: 0;
+        }
+
+        .biography {
+          .timeline {
+            margin-left: 0;
+          }
         }
 
         .works {
