@@ -43,6 +43,5 @@ export class MapService {
       target.balloon.open();
       _map.panTo(target.geometry.getCoordinates(), {useMapMargin: true});
     });
-    console.log(_map);
   }
 }

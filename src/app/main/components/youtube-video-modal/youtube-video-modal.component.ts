@@ -16,7 +16,6 @@ export class YoutubeVideoModalComponent {
     @Inject(MAT_DIALOG_DATA) public data: {videoLink: string},
     private sanitizer: DomSanitizer
   ) {
-    console.log(this.data.videoLink);
     this.link = this.sanitizer
     .bypassSecurityTrustResourceUrl(this.data.videoLink.replace('watch?v=', 'embed/'));
   }
