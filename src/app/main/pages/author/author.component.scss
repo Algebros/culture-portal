@@ -175,7 +175,6 @@ $indent-title: 20px;
           max-width: 275px;
         }
         @media screen and (max-width: $sm) {
-          // order: 1;
           @include flex(center, center, column);
         }
       }
@@ -240,13 +239,6 @@ $indent-title: 20px;
         .personal {
           padding: 0;
           border-left: 0;
-          &__name {
-            
-          }
-        }
-
-        .biography {
-
         }
 
         .works {
