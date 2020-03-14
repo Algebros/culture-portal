@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {LanguageService} from './language.service';
+import { Injectable } from '@angular/core';
+import { LanguageService } from './language.service';
 import butterService from 'src/app/core/services/butter-cms.service';
 import Developer from '../models/developer.model';
 import Author from '../models/author.model';
@@ -9,50 +9,44 @@ import Author from '../models/author.model';
 })
 export class ContentService {
 
-  private randomInt: number;
-  public developers: Developer[];
-  public authors: Author[];
   public authorOfTheDay: Author;
+  public authors: { [key: string]: Author[] } = { en: null, ru: null, be: null };
+  public developers: { [key: string]: Developer[] } = { en: null, ru: null, be: null };
 
   constructor(private languageService: LanguageService) {}
 
-  private randomInteger(min: number, max: number): number {
-    let rand: number = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
+  public random(min: number, max: number): number {
+    return  Math.floor(min + Math.random() * (max + 1 - min));
   }
 
-  private filterAuthorsById(data: Author[]): Author[] {
-    return data.filter(item => item.id);
-  }
+  public getAuthors(): Author[] | void  {
+    const locale: string = this.languageService.language;
+    const authors: Author[] = this.authors[locale];
 
-  public getAuthors(): Promise<Author>  {
-    return butterService.content
-      .retrieve(['author'], { locale: this.languageService.language })
-      .then(response => {
+    if (authors) {
+      return authors;
+    }
 
-        this.authors = this.filterAuthorsById(response.data.data.author);
-
-        if (!this.randomInt) {
-          this.randomInt = this.randomInteger(0, 8);
-          this.authorOfTheDay = this.authors[this.randomInt];
-        } else {
-          this.authorOfTheDay = this.authors[this.randomInt];
-        }
-
-        return this.authors;
-      })
-      .catch(error => console.log(error));
-  }
-
-  public getDevelopers(): void {
     butterService.content
-      .retrieve(['developer'], { locale: this.languageService.language })
-      .then(response => this.developers = response.data.data.developer)
-      .catch(error => console.error(error));
+      .retrieve(['author'], { locale })
+      .then(response => {
+        this.authors[locale] = response.data.data.author.filter(author => author.id);
+        this.authorOfTheDay = this.authors[locale][this.random(0, this.authors[locale].length - 1)];
+      }).catch(error => console.log(error));
   }
 
-  public getAuthorById(id: string): Author {
-     return this.authors.find(author => author.id === +id);
+  public getDevelopers(): Developer[] | void {
+    const locale: string = this.languageService.language;
+    const developers: Developer[] = this.developers[locale];
+
+    if (developers) {
+      return developers;
+    }
+
+    butterService.content
+      .retrieve(['developer'], { locale })
+      .then(response => this.developers[locale] = response.data.data.developer)
+      .catch(error => console.error(error));
   }
 
 }
