@@ -1,5 +1,40 @@
-.evaluation__title {
-  margin-bottom: 30px;
+@import "index";
+
+.wrapper-head {
+  @include size(100%, auto);
+  @include relative(top 0 left 0);
+  @include flex(flex-start, center);
+
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  &:before {
+    @include pseudo-line;
+  }
+
+  &__header {
+    margin: 0;
+
+    @media screen and (min-width: $xs) {
+      @include font(32px);
+    }
+
+    @media screen and (min-width: $sm) {
+      @include font(36px);
+    }
+
+    @media screen and (min-width: $md) {
+      @include font(40px);
+    }
+
+    @media screen and (min-width: $lg) {
+      @include font(44px);
+    }
+
+    @media screen and (min-width: $xl) {
+      @include font(48px);
+    }
+  }
 }
 
 .evaluation__card {
