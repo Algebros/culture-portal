@@ -48,6 +48,7 @@ $indent-title: 20px;
         }
 
         .biography {
+          margin-bottom: 20px;
 
           .title {
             display: flex;
@@ -76,6 +77,7 @@ $indent-title: 20px;
         }
 
         .works {
+          margin-bottom: 20px;
 
           .title {
             display: flex;
@@ -109,7 +111,7 @@ $indent-title: 20px;
         }
 
         .places {
-
+          margin-bottom: 20px;
           .title {
             display: flex;
             font-family: "Roboto Mono";
@@ -173,7 +175,7 @@ $indent-title: 20px;
           max-width: 275px;
         }
         @media screen and (max-width: $sm) {
-          order: 1;
+          // order: 1;
           @include flex(center, center, column);
         }
       }
@@ -197,6 +199,73 @@ $indent-title: 20px;
           position: absolute;
           right: -3px;
         }
+      }
+    }
+  }
+
+    @media screen and (max-width: $md) {
+    .container {
+      flex-direction: column;
+
+      &__left {
+        order: 2;
+        width: 100%;
+
+        .works {
+          .table {
+            padding: 0;
+            margin: 0 auto;
+          }
+        }
+
+        .places {
+          .map {
+            margin: 0 auto;
+          }
+        }
+      }
+
+      &__right {
+        order: 1;
+        width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: $xs) {
+    .container {
+
+      &__left {
+
+        .personal {
+          padding: 0;
+          border-left: 0;
+          &__name {
+            
+          }
+        }
+
+        .biography {
+
+        }
+
+        .works {
+          .table {
+            padding: 0;
+            margin: 0 auto;
+          }
+        }
+
+        .places {
+          .map {
+            margin: 0 auto;
+          }
+        }
+      }
+
+      &__right {
+        order: 1;
+        width: 100%;
       }
     }
   }

@@ -85,3 +85,19 @@
 		width: auto;
 	}
 }
+
+@media screen and (max-width: $xs) {
+	.carousel-control.left {
+		margin: 0;
+		padding: 0;
+	}
+
+	.carousel-control.right {
+		margin: 0;
+		padding: 0;
+	}
+
+	.carousel-indicators {
+		display: none;
+	}
+}
