@@ -1,0 +1,45 @@
+<div class="evaluation">
+  <h2 class="evaluation__title">Self-evaluation</h2>
+
+  <mat-card class="evaluation__card">
+    <mat-card-header>
+      <mat-card-title>Min scope</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="evaluation__criteria">
+      <mat-checkbox class="criteria__asc" *ngFor="let scope of scopes.min">{{scope.criteria}}</mat-checkbox>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="evaluation__card">
+    <mat-card-header>
+      <mat-card-title>Normal scope</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="evaluation__criteria">
+      <mat-checkbox class="criteria__asc" *ngFor="let scope of scopes.normal">{{scope.criteria}}</mat-checkbox>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="evaluation__card">
+    <mat-card-header>
+      <mat-card-title>Extra scope</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="evaluation__criteria">
+      <mat-checkbox class="criteria__asc" *ngFor="let scope of scopes.extra">{{scope.criteria}}</mat-checkbox>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="evaluation__card">
+    <mat-card-header>
+      <mat-card-title>Fines</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="evaluation__criteria">
+      <mat-checkbox class="criteria__asc" *ngFor="let scope of scopes.fines" (change)="changeTotalScore(scope.points)" #checkbox>{{scope.criteria}}</mat-checkbox>
+    </mat-card-content>
+  </mat-card>
+
+  <h3>Total score: {{score}}</h3>
+</div>
