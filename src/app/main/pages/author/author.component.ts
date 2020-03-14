@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {VideoModalService} from '../../services/video-modal.service';
-import {ActivatedRoute, Params} from '@angular/router';
-import {ContentService} from '../../services/content.service';
-import Author from '../../models/author.model';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { VideoModalService } from '../../services/video-modal.service';
 import { LanguageService } from '../../services/language.service';
+import { ContentService } from '../../services/content.service';
 import { Subscription } from 'rxjs';
+import Author from '../../models/author.model';
+import butterService from '../../../core/services/butter-cms.service';
 
 @Component({
   selector: 'app-author',
@@ -12,25 +13,31 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./author.component.scss'],
 })
 export class AuthorComponent implements OnInit {
-  public subscription: Subscription;
-
-  public author: Author;
 
   public displayedColumns: string[] = ['date', 'description'];
+  public subscription: Subscription;
+  public author: Author;
 
-  constructor(
-    public videoModalService: VideoModalService,
-    private route: ActivatedRoute,
-    public contentService: ContentService,
-    private languageService: LanguageService,
-    ) { }
+  constructor(public videoModalService: VideoModalService,
+              public languageService: LanguageService,
+              public contentService: ContentService,
+              public route: ActivatedRoute) {
+    this.subscription = this.languageService.changeLanguage.subscribe(() => {
+      this.getAuthorById(Number(this.route.snapshot.params.id));
+    });
+  }
 
   public ngOnInit(): void {
-    this.subscription = this.languageService.changeLanguage.subscribe(() => {
-      this.contentService.getAuthors();
-    });
+    this.getAuthorById(Number(this.route.snapshot.params.id));
+  }
 
-    this.route.params.subscribe((data) => this.author = this.contentService.getAuthorById(data.id));
+  public getAuthorById(id: number): void {
+    butterService.content
+      .retrieve(['author'], { locale: this.languageService.language })
+      .then(response => {
+        this.author = (response.data.data.author.filter(author => author.id === id))[0];
+        console.log(this.author);
+      }).catch(error => console.log(error));
   }
 
   public ngOnDestroy(): void {
