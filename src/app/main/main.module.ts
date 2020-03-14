@@ -13,7 +13,6 @@ import { MapComponent } from './components/map/map.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthorsComponent } from './pages/authors/authors.component';
 import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
-import { WorksComponent } from './components/works/works.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { YoutubeVideoModalComponent } from './components/youtube-video-modal/youtube-video-modal.component';
 import { VideoModalService } from './services/video-modal.service';
@@ -42,7 +41,6 @@ import { SplitPipe } from './pipes/split.pipe';
     HomeComponent,
     AuthorsComponent,
     DeveloperCardComponent,
-    WorksComponent,
     YoutubeVideoModalComponent,
     SearchAuthorPipe,
     TotalTimePipe,
