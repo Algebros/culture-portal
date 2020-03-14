@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { locations } from '../mocks/location-mock';
 import Location from './../models/location.model';
 
 /* tslint:disable */
@@ -12,21 +11,20 @@ let _map: any;
 })
 export class MapService {
 
-  public locations: Location[];
-
   public destroyMap(): void {
     _map.destroy();
   }
 
-  public initMap(): void {
+  public initMap(loc: Location[]): void {
     _map = new ymaps.Map('map', {
       center: [53.21, 28.02],
       zoom: 5,
       controls: ['zoomControl']
     });
 
-    const content: Array<string> = locations.map(item => item.description);
-    const coordinates: Array<Array<number>> = locations.map(item => [item.lat, item.lng]);
+    const content: Array<string> = loc.map(item => item.description);
+    const coordinates: Array<Array<number>> = loc.map(item => [item.lat, item.lng]);
+
 
     let collection: any = new ymaps.GeoObjectCollection(null, {
       preset: 'islands#circleDotIcon',
@@ -45,5 +43,6 @@ export class MapService {
       target.balloon.open();
       _map.panTo(target.geometry.getCoordinates(), {useMapMargin: true});
     });
+    console.log(_map);
   }
 }
