@@ -4,6 +4,8 @@
   @include flex(space-between, $direction: column);
   @include size(300px, 440px);
 
+  position: relative;
+
   background-color: $bg-green;
 
   &__inner {
@@ -23,11 +25,15 @@
 
   padding: 0 !important;
 
-  transform: translate(-18px, -36px);
+  transform: translate(calc(-50% + 8px), -100%);
 }
 
 .author__btn {
+  @include size(120px, 36px);
+
   font-style: italic;
+
+  padding: 0 !important;
 
   &:focus {
     outline: none;

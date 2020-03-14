@@ -37,7 +37,8 @@
       "works": {
         "year": "Year",
         "title": "Title"
-      }
+      },
+      "button": "Learn more"
     },
     "team": {
       "header": "Meet our team",
