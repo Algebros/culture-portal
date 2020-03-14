@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="authors-page__authors">
-      <app-author-card *ngFor="let author of contentService.authors | searchAuthor:sortingCriteria:searchValue" [author]="author"></app-author-card>
+      <app-author-card *ngFor="let author of contentService.authors[this.languageService.language] | searchAuthor:sortingCriteria:searchValue" [author]="author"></app-author-card>
     </div>
   </div>
 </div>

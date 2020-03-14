@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="author">
   <div class="container__left">
 
     <div class="personal">
@@ -29,7 +29,7 @@
         <!-- year -->
         <ng-container matColumnDef="date">
           <th mat-header-cell *matHeaderCellDef>{{'page.author.works.year' | translate}}</th>
-          <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.date | date: 'yyyy'}} </td>
         </ng-container>
 
         <!-- title -->

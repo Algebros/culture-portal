@@ -1,5 +1,11 @@
 @import "index";
 
+.container {
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .sliderAuthors {
 	width: 350px;
 	height: 512px;
@@ -77,12 +83,6 @@
     height: 30px;
     margin-top: -10px;
     font-size: 15px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.container {
-		width: auto;
 	}
 }
 
