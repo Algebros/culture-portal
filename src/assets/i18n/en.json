@@ -62,6 +62,21 @@
         "sofroniy-miadvedzeu": "Sofroniy Miadvedzeu",
         "yauhen-pachankou": "Yauhen Pachankou",
         "yauhen-kalanitski": "Yauhen Kalanitski"
+      },
+      "difficulties": {
+        "header": "Teamwork difficulties",
+        "first": "Lack of uniform code style",
+        "second": "Extra time is spent rewriting code",
+        "third": "Inequality of tasks in complexity"
+      },
+      "marks": {
+        "evaluation": "Self-evaluation",
+        "total": "Total",
+        "minimum": "Minimum",
+        "normal": "Normal",
+        "extra": "Extra",
+        "fines": "Fines"
+
       }
     },
     "error": {

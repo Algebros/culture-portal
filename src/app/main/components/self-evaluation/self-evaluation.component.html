@@ -1,0 +1,56 @@
+<div class="evaluation">
+  <div class="wrapper-head">
+    <h2 class="evaluation__title wrapper-head__header">{{'page.worklog.marks.evaluation' | translate}}</h2>
+  </div>
+
+  <mat-card class="evaluation__card">
+    <mat-card-header>
+      <mat-card-title>{{'page.worklog.marks.minimum' | translate}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="evaluation__criteria">
+      <mat-checkbox *ngFor="let scope of scopes.min" [(ngModel)]="scope.isChecked">{{scope.criteria}}</mat-checkbox>
+    </mat-card-content>
+
+    <p>{{'page.worklog.marks.total' | translate}}: {{sumMinScore}}</p>
+  </mat-card>
+
+  <mat-card class="evaluation__card">
+    <mat-card-header>
+      <mat-card-title>{{'page.worklog.marks.normal' | translate}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="evaluation__criteria">
+      <mat-checkbox *ngFor="let scope of scopes.normal" [(ngModel)]="scope.isChecked">{{scope.criteria}}</mat-checkbox>
+    </mat-card-content>
+
+    <p>{{'page.worklog.marks.total' | translate}}: {{sumNormalScore}}</p>
+  </mat-card>
+
+  <mat-card class="evaluation__card">
+    <mat-card-header>
+      <mat-card-title>{{'page.worklog.marks.extra' | translate}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="evaluation__criteria">
+      <mat-checkbox *ngFor="let scope of scopes.extra" [(ngModel)]="scope.isChecked">{{scope.criteria}}</mat-checkbox>
+    </mat-card-content>
+
+    <p>{{'page.worklog.marks.total' | translate}}: {{sumExtraScore}}</p>
+  </mat-card>
+
+  <mat-card class="evaluation__card">
+    <mat-card-header>
+      <mat-card-title>{{'page.worklog.marks.fines' | translate}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="evaluation__criteria">
+      <mat-checkbox *ngFor="let scope of scopes.fines" [(ngModel)]="scope.isChecked">{{scope.criteria}}</mat-checkbox>
+    </mat-card-content>
+
+    <p>{{'page.worklog.marks.total' | translate}}: {{sumFinesScore}}</p>
+  </mat-card>
+
+  <h3>{{'page.worklog.marks.total' | translate}}: {{sumMinScore + sumNormalScore + sumExtraScore + sumFinesScore}}</h3>
+</div>
+

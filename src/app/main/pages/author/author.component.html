@@ -5,8 +5,8 @@
       <h2 class="personal__name">{{ author.firstname | translate }} {{ author.lastname | translate }}</h2>
       <span class="personal__subtitle">{{ author.title | translate }}</span>
       <div class="personal__date">
-        <time class="born">{{ author.born | date }}</time>
-        <time class="die" *ngIf="author.died"> - {{ author.died | date }}</time>
+        <time class="born">{{ author.born | date: 'dd/MM/yyyy' }}</time>
+        <time class="die" *ngIf="author.died"> - {{ author.died | date: 'dd/MM/yyyy' }}</time>
       </div>
     </div>
 

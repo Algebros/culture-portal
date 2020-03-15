@@ -175,6 +175,12 @@ $indent-title: 20px;
         margin-top: 20%;
         margin-bottom: 20%;
         height: 80%;
+
+        @media screen and (max-width: $md) {
+          margin-top: 25%;
+          margin-bottom: 10%;
+        }
+
         &__text {
           position: relative;
           @include font($font: 'Roboto Slab', $size: 25px, $color: black);
