@@ -9,16 +9,40 @@ import { Component, OnInit } from '@angular/core';
 export class StyleGuideColors implements OnInit {
   public colors: Array<{name: string, color: string}> = [
     {
-      name: 'primary',
-      color: '#2A73CC'
+      name: 'Ivory',
+      color: '#fdfff7'
     },
     {
-      name: 'darkPrimary',
-      color: '#0156B8'
+      name: 'White Smoke',
+      color: '#f2f2f2'
     },
     {
-      name: 'lightPrimary',
-      color: '#82A8E1'
+      name: 'White Nectar',
+      color: '#f8f5da'
+    },
+    {
+      name: 'Tomato',
+      color: '#ff6243'
+    },
+    {
+      name: 'Wild Strawberry',
+      color: '#ff4081'
+    },
+    {
+      name: 'Cardinal',
+      color: '#d12222'
+    },
+    {
+      name: 'Finlandia',
+      color: '#627964'
+    },
+    {
+      name: 'Free Speech Blue',
+      color: '#3f51b5'
+    },
+    {
+      name: 'Valhalla',
+      color: '#2d2d43'
     },
   ];
 
