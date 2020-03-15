@@ -17,6 +17,7 @@ import { DeveloperCardComponent } from './components/developer-card/developer-ca
 import { StyleGuideColors } from './components/styleguide/colors/colors.component';
 import { StyleGuideFonts } from './components/styleguide/fonts/fonts.component';
 import { StyleGuideButtons } from './components/styleguide/buttons/buttons.component';
+import { AuthorCardComponent } from './components/author-card/author-card.component';
 
 export default {
   title: 'Components',
@@ -27,7 +28,8 @@ export default {
     TimelineComponent,
     StyleGuideColors,
     StyleGuideFonts,
-    StyleGuideButtons
+    StyleGuideButtons,
+    AuthorCardComponent
   ],
   decorators: [
     moduleMetadata({
@@ -114,6 +116,16 @@ export const timeline = () => ({
 
 timeline.story = {
   name: 'Timeline',
+};
+
+// tslint:disable-next-line: typedef
+export const authorcard = () => ({
+  component: AuthorCardComponent,
+  props: {}
+});
+
+authorcard.story = {
+  name: 'Author',
 };
 
 // tslint:disable-next-line: typedef
