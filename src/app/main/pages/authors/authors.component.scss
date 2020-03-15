@@ -145,10 +145,6 @@
 
   list-style: none;
 
-  @media screen and (max-width: 768px) {
-    //width: 190px;
-  }
-
   p {
     margin: 0;
   }
@@ -157,15 +153,13 @@
 .search__criteria {
   margin: 0 1rem;
   padding: 5px;
-  width: 65px;
-  height: 40px;
 
   border: 0;
 
   background-color: transparent;
 
   &:hover:not(.search__criteria--active) {
-    border: 1px solid $black75;
+    box-shadow: inset 0 0 0 1px $black75;
   }
 
   &:focus {
@@ -173,11 +167,11 @@
   }
 
   &--active {
-    border: 1px solid $black50;
+    box-shadow: inset 0 0 0 1px $black75;
   }
 
   &:not(.search__criteria--active) {
-    border-bottom: 1px solid $black50;
+    box-shadow: inset 0 -1px 0 0 $black75;
   }
 }
 
