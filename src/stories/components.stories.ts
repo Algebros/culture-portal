@@ -17,6 +17,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
 import { StyleGuideColors } from './components/styleguide/colors/colors.component';
 import { StyleGuideFonts } from './components/styleguide/fonts/fonts.component';
+import { StyleGuideButtons } from './components/styleguide/buttons/buttons.component';
 
 export default {
   title: 'Components',
@@ -27,7 +28,8 @@ export default {
     GalleryComponent,
     TimelineComponent,
     StyleGuideColors,
-    StyleGuideFonts
+    StyleGuideFonts,
+    StyleGuideButtons
   ],
   decorators: [
     moduleMetadata({
@@ -124,4 +126,14 @@ export const stylefonts = () => ({
 
 stylefonts.story = {
   name: 'fonts',
+};
+
+// tslint:disable-next-line: typedef
+export const stylebuttons = () => ({
+  component: StyleGuideButtons,
+  props: {}
+});
+
+stylebuttons.story = {
+  name: 'buttons',
 };
