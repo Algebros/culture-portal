@@ -24,6 +24,8 @@ export class ContentService {
     const authors: Author[] = this.authors[locale];
 
     if (authors) {
+      this.authorOfTheDay = this.authors[locale][0];
+
       return authors;
     }
 
@@ -31,7 +33,7 @@ export class ContentService {
       .retrieve(['author'], { locale })
       .then(response => {
         this.authors[locale] = response.data.data.author.filter(author => author.id);
-        this.authorOfTheDay = this.authors[locale][this.random(0, this.authors[locale].length - 1)];
+        this.authorOfTheDay = this.authors[locale][0];
       }).catch(error => console.log(error));
   }
 
