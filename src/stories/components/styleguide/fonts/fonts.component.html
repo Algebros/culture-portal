@@ -1,0 +1,5 @@
+<div class="box"
+  *ngFor="let item of fonts">
+  <span class="box__color"
+  [ngStyle]="{color: item.color, fontSize: item.size}">{{item.name}}</span>
+</div>

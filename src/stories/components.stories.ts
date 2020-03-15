@@ -15,6 +15,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
+import { StyleGuideColors } from './components/styleguide/colors/colors.component';
+import { StyleGuideFonts } from './components/styleguide/fonts/fonts.component';
 
 export default {
   title: 'Components',
@@ -23,7 +25,9 @@ export default {
     MobileMenuComponent,
     FooterComponent,
     GalleryComponent,
-    TimelineComponent
+    TimelineComponent,
+    StyleGuideColors,
+    StyleGuideFonts
   ],
   decorators: [
     moduleMetadata({
@@ -49,6 +53,7 @@ export default {
   ]
 };
 
+// tslint:disable-next-line: typedef
 export const header = () => ({
   template: `
   <app-header></app-header>
@@ -61,6 +66,7 @@ header.story = {
   name: 'Header',
 };
 
+// tslint:disable-next-line: typedef
 export const footer = () => ({
   component: FooterComponent,
   props: {}
@@ -70,6 +76,7 @@ footer.story = {
   name: 'Footer',
 };
 
+// tslint:disable-next-line: typedef
 export const gallery = () => ({
   component: GalleryComponent,
   props: {}
@@ -79,6 +86,7 @@ gallery.story = {
   name: 'Gallery',
 };
 
+// tslint:disable-next-line: typedef
 export const timeline = () => ({
   component: TimelineComponent,
   props: {}
@@ -88,6 +96,7 @@ timeline.story = {
   name: 'Timeline',
 };
 
+// tslint:disable-next-line: typedef
 export const devCard = () => ({
   component: DeveloperCardComponent,
   props: {}
@@ -95,6 +104,26 @@ export const devCard = () => ({
 
 devCard.story = {
   name: 'DevCard',
+};
+
+// tslint:disable-next-line: typedef
+export const stylecolors = () => ({
+  component: StyleGuideColors,
+  props: {}
+});
+
+stylecolors.story = {
+  name: 'colors',
+};
+
+// tslint:disable-next-line: typedef
+export const stylefonts = () => ({
+  component: StyleGuideFonts,
+  props: {}
+});
+
+stylefonts.story = {
+  name: 'fonts',
 };
 
 // export const headerMobile: {

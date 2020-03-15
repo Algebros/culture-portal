@@ -1,0 +1,7 @@
+<div class="box"
+  *ngFor="let item of colors">
+
+  <div class="box__color"
+    [ngStyle]="{backgroundColor: item.color}"></div>
+  <div>{{item.name}}</div>
+</div>
