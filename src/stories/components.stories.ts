@@ -69,46 +69,6 @@ header.story = {
 };
 
 // tslint:disable-next-line: typedef
-export const footer = () => ({
-  component: FooterComponent,
-  props: {}
-});
-
-footer.story = {
-  name: 'Footer',
-};
-
-// tslint:disable-next-line: typedef
-export const gallery = () => ({
-  component: GalleryComponent,
-  props: {}
-});
-
-gallery.story = {
-  name: 'Gallery',
-};
-
-// tslint:disable-next-line: typedef
-export const timeline = () => ({
-  component: TimelineComponent,
-  props: {}
-});
-
-timeline.story = {
-  name: 'Timeline',
-};
-
-// tslint:disable-next-line: typedef
-export const devCard = () => ({
-  component: DeveloperCardComponent,
-  props: {}
-});
-
-devCard.story = {
-  name: 'DevCard',
-};
-
-// tslint:disable-next-line: typedef
 export const stylecolors = () => ({
   component: StyleGuideColors,
   props: {}
@@ -136,4 +96,34 @@ export const stylebuttons = () => ({
 
 stylebuttons.story = {
   name: 'buttons',
+};
+
+// tslint:disable-next-line: typedef
+export const footer = () => ({
+  component: FooterComponent,
+  props: {}
+});
+
+footer.story = {
+  name: 'Footer',
+};
+
+// tslint:disable-next-line: typedef
+export const timeline = () => ({
+  component: TimelineComponent,
+  props: {}
+});
+
+timeline.story = {
+  name: 'Timeline',
+};
+
+// tslint:disable-next-line: typedef
+export const devCard = () => ({
+  component: DeveloperCardComponent,
+  props: {}
+});
+
+devCard.story = {
+  name: 'DevCard',
 };
