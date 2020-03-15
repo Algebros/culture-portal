@@ -7,21 +7,60 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class StyleGuideFonts implements OnInit {
-  public fonts: Array<{name: string, size: string, color: string}> = [
+  public fonts: Array<{name: string, fontFamily: string, size: string, color: string}> = [
     {
-      name: 'primary',
-      size: '20px',
-      color: '#2A73CC'
+      name: 'Roboto: Lorem ipsum dolor sit amet.',
+      fontFamily: 'Roboto, "Helvetica Neue", sans-serif',
+      size: '14px',
+      color: '#333'
     },
     {
-      name: 'darkPrimary',
-      size: '20px',
-      color: '#0156B8'
+      name: 'Roboto Slab: Lorem ipsum dolor sit amet.',
+      fontFamily: 'Roboto Slab, Helvetica, sans-serif',
+      size: '14px',
+      color: '#333'
     },
     {
-      name: 'lightPrimary',
-      size: '20px',
-      color: '#82A8E1'
+      name: 'Roboto Slab: Lorem ipsum dolor sit amet.',
+      fontFamily: 'Roboto Slab, Helvetica, sans-serif',
+      size: '16px',
+      color: '#333'
+    },
+    {
+      name: 'Roboto Slab: Lorem ipsum dolor sit amet.',
+      fontFamily: 'Roboto Slab, Helvetica, sans-serif',
+      size: '18px',
+      color: '#333'
+    },
+    {
+      name: 'Roboto Slab: Lorem ipsum dolor sit amet.',
+      fontFamily: 'Roboto Slab, Helvetica, sans-serif',
+      size: '25px',
+      color: '#333'
+    },
+    {
+      name: 'Roboto Slab: Lorem ipsum dolor sit amet.',
+      fontFamily: 'Roboto Slab, Helvetica, sans-serif',
+      size: '28px',
+      color: '#333'
+    },
+    {
+      name: 'Roboto Slab: Lorem ipsum dolor sit amet.',
+      fontFamily: 'Roboto Slab, Helvetica, sans-serif',
+      size: '40px',
+      color: '#333'
+    },
+    {
+      name: 'Roboto Slab: Lorem ipsum dolor sit amet.',
+      fontFamily: 'Roboto Slab, Helvetica, sans-serif',
+      size: '48px',
+      color: '#333'
+    },
+    {
+      name: 'Roboto Mono: Lorem ipsum dolor sit amet.',
+      fontFamily: 'Roboto Mono, Helvetica, sans-serif',
+      size: '40px',
+      color: '#333'
     },
   ];
 
