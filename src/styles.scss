@@ -16,3 +16,19 @@ html, body {
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $bg-purple;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: lighten($bg-purple, 25%);
+}
