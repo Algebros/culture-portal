@@ -11,7 +11,6 @@ import { CoreRoutingModule } from 'src/app/core/core-routing.module';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { DeveloperCardComponent } from './components/developer-card/developer-card.component';
@@ -25,7 +24,6 @@ export default {
     HeaderComponent,
     MobileMenuComponent,
     FooterComponent,
-    GalleryComponent,
     TimelineComponent,
     StyleGuideColors,
     StyleGuideFonts,
